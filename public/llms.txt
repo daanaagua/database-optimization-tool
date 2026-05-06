@@ -1,0 +1,20 @@
+# Database Optimization Tool
+
+Database Optimization Tool helps small businesses, local shops, and small software teams start database performance work with evidence-backed audits.
+
+Current support:
+
+- PostgreSQL: available now through a read-only audit workflow.
+- MySQL: planned.
+- SQL Server: planned.
+
+Important pages:
+
+- https://databaseoptimizationtool.com/
+- https://databaseoptimizationtool.com/postgresql/
+- https://databaseoptimizationtool.com/database-optimization/
+- https://databaseoptimizationtool.com/database-optimization-audit/
+- https://databaseoptimizationtool.com/query-optimization/
+- https://databaseoptimizationtool.com/tools/
+- https://databaseoptimizationtool.com/mysql/
+- https://databaseoptimizationtool.com/sql-server/

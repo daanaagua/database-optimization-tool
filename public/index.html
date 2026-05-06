@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Database Optimization Tool for Small Businesses</title>
+  <meta name="description" content="Database Optimization Tool helps small businesses find slow queries, missing indexes, and database risk with a read-only PostgreSQL audit workflow.">
+  <link rel="canonical" href="https://databaseoptimizationtool.com/">
+  <meta property="og:title" content="Database Optimization Tool">
+  <meta property="og:description" content="Evidence-backed database optimization for small businesses. PostgreSQL available now.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://databaseoptimizationtool.com/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "Database Optimization Tool",
+        "url": "https://databaseoptimizationtool.com"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Database Optimization Tool",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "url": "https://databaseoptimizationtool.com",
+        "description": "Read-only database optimization audit workflow for PostgreSQL, built for small businesses and small software teams."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is Database Optimization Tool an automatic tuning tool?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. The first product is an evidence-backed optimization workflow. It surfaces findings and review steps, but it does not automatically change production databases."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which database is supported now?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "PostgreSQL is supported first. MySQL and SQL Server are planned roadmap surfaces."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/"><span class="brand-mark">DB</span><span>Database Optimization Tool</span></a>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="/database-optimization/">Database optimization</a>
+      <a href="/postgresql/">PostgreSQL</a>
+      <a href="/query-optimization/">Queries</a>
+      <a href="/tools/">Tools</a>
+      <a class="button-link" href="/postgresql/">Start with PostgreSQL</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">PostgreSQL available now. More SQL engines planned.</p>
+        <h1>Database Optimization Tool for small businesses.</h1>
+        <p class="lede">Find slow queries, missing index candidates, table health risk, and safe next steps before anyone changes production or pays for a bigger database.</p>
+        <p class="intro-note">A database is the system behind your shop orders, booking calendar, inventory, invoices, app users, and reports. When it slows down, a small business feels it quickly: checkout stalls, staff wait, and customers leave.</p>
+        <div class="actions">
+          <a class="button-link" href="/postgresql/">Run a PostgreSQL audit path</a>
+          <a class="secondary-link" href="/database-optimization/">Learn database optimization</a>
+        </div>
+        <div class="status-row" aria-label="Product boundaries">
+          <span class="pill"><strong>Read-only</strong> collector model</span>
+          <span class="pill"><strong>Evidence</strong> before advice</span>
+          <span class="pill"><strong>AI notes</strong> for review only</span>
+        </div>
+      </div>
+
+      <aside class="tool-preview" aria-label="Database optimization report preview">
+        <div class="preview-top">
+          <span>Optimization workbench preview</span>
+          <span class="preview-dot" aria-hidden="true"></span>
+        </div>
+        <div class="preview-body">
+          <div class="finding">
+            <span class="severity">HIGH</span>
+            <div>
+              <strong>Checkout query spends 68% of total DB time</strong>
+              <p>Evidence: top query by total execution time, temp blocks written, and repeated disk reads.</p>
+            </div>
+          </div>
+          <div class="finding">
+            <span class="severity">HIGH</span>
+            <div>
+              <strong>Orders table shows sequential scan pressure</strong>
+              <p>Next step: review common filters and run EXPLAIN before adding an index.</p>
+            </div>
+          </div>
+          <div class="finding">
+            <span class="severity medium">REVIEW</span>
+            <div>
+              <strong>AI-assisted notes require human approval</strong>
+              <p>LLM summaries explain evidence and produce a review checklist, not production SQL execution.</p>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="band" id="problems">
+      <div class="section-head">
+        <h2>Start with the business symptom, not a database theory lecture.</h2>
+        <p>Small teams usually notice database problems through daily work: sales reports hang, the POS is slow, dashboards time out, or a customer-facing app gets slower after growth.</p>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <h3>Slow checkout or booking flow</h3>
+          <p>Identify the slowest database work behind user-facing paths and separate query pressure from app code guesses.</p>
+        </article>
+        <article class="card">
+          <h3>Inventory and reporting lag</h3>
+          <p>Find tables, indexes, and read patterns that make back-office screens feel heavier as records grow.</p>
+        </article>
+        <article class="card">
+          <h3>Cloud database bills rising</h3>
+          <p>Use evidence to decide whether to optimize queries, remove waste, tune maintenance, or scale the instance.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="band alt" id="workflow">
+      <div class="section-head">
+        <h2>An optimization tool should show evidence before advice.</h2>
+        <p>The first version focuses on a safe PostgreSQL workflow: no production writes, no automatic index creation, and no unsupported AI claims.</p>
+      </div>
+      <div class="grid">
+        <article class="step">
+          <span class="number">1</span>
+          <h3>Run collector</h3>
+          <p>Collect PostgreSQL metadata and statistics with a restricted, read-only workflow.</p>
+        </article>
+        <article class="step">
+          <span class="number">2</span>
+          <h3>Upload evidence</h3>
+          <p>Use structured evidence instead of screenshots, chat snippets, or vague performance complaints.</p>
+        </article>
+        <article class="step">
+          <span class="number">3</span>
+          <h3>Review findings</h3>
+          <p>See deterministic findings for slow queries, index candidates, table health, and maintenance signals.</p>
+        </article>
+        <article class="step">
+          <span class="number">4</span>
+          <h3>Use AI-assisted next steps</h3>
+          <p>Get explanations and review checklists while keeping human approval in front of production changes.</p>
+        </article>
+        <article class="step">
+          <span class="number">5</span>
+          <h3>Validate safely</h3>
+          <p>Use EXPLAIN, staging checks, and planned rollout steps before applying database changes.</p>
+        </article>
+        <article class="step">
+          <span class="number">6</span>
+          <h3>Track the next bottleneck</h3>
+          <p>Turn each report into a prioritized work queue for a founder, developer, or outside consultant.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="band" id="engines">
+      <div class="section-head">
+        <h2>PostgreSQL first, with a wider SQL roadmap.</h2>
+        <p>The domain is broad on purpose. The product boundary is narrow on purpose.</p>
+      </div>
+      <div class="grid">
+        <article class="engine">
+          <span class="engine-status">AVAILABLE NOW</span>
+          <h3>PostgreSQL</h3>
+          <p>Read-only audit path for slow queries, missing index candidates, unused indexes, bloat signals, autovacuum drift, and temp writes.</p>
+          <a href="/postgresql/">View PostgreSQL support</a>
+        </article>
+        <article class="engine">
+          <span class="engine-status planned">PLANNED</span>
+          <h3>MySQL</h3>
+          <p>Roadmap page for future query, index, and table health checks. No current collector claims.</p>
+          <a href="/mysql/">View roadmap</a>
+        </article>
+        <article class="engine">
+          <span class="engine-status planned">PLANNED</span>
+          <h3>SQL Server</h3>
+          <p>Roadmap page for teams that need performance review without pretending support exists today.</p>
+          <a href="/sql-server/">View roadmap</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="band alt">
+      <div class="section-head">
+        <h2>What the first report checks.</h2>
+        <p>Designed for practical optimization decisions, not academic database tuning.</p>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <h3>Query pressure</h3>
+          <p>Slow queries, total time, mean time, temp writes, disk reads, and repeated expensive patterns.</p>
+          <a href="/query-optimization/">Query optimization path</a>
+        </article>
+        <article class="card">
+          <h3>Index review</h3>
+          <p>Missing index candidates, unused indexes, sequential scan pressure, and composite-index review signals.</p>
+        </article>
+        <article class="card">
+          <h3>Table health</h3>
+          <p>Bloat signals, row estimates, dead tuple pressure, relation sizes, and maintenance drift.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="band">
+      <div class="section-head">
+        <h2>Audit, tool, or automatic optimizer?</h2>
+        <p>Database optimization is a wide market. The safest first product is a tool that audits evidence and guides review.</p>
+      </div>
+      <table class="comparison">
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>What it does</th>
+            <th>Our stance</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Database optimization audit</td>
+            <td>Finds risks and next steps from collected evidence.</td>
+            <td>Current product path.</td>
+          </tr>
+          <tr>
+            <td>Database optimization tool</td>
+            <td>Turns the audit into a repeatable workflow and workbench.</td>
+            <td>Current brand and near-term direction.</td>
+          </tr>
+          <tr>
+            <td>Automatic database optimizer</td>
+            <td>Changes indexes, settings, or queries automatically.</td>
+            <td>Not claimed. Production changes require review.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="band alt" id="faq">
+      <div class="section-head">
+        <h2>Common questions from small teams.</h2>
+      </div>
+      <div class="faq">
+        <article>
+          <h3>Is this for non-technical business owners?</h3>
+          <p>Yes, but it is not magic. The site explains database risk in business language while still producing technical evidence a developer or consultant can review.</p>
+        </article>
+        <article>
+          <h3>Does it support MySQL today?</h3>
+          <p>No. PostgreSQL is first. MySQL and SQL Server pages are roadmap surfaces until collectors and findings are built.</p>
+        </article>
+        <article>
+          <h3>Will AI change my database?</h3>
+          <p>No. AI-assisted notes explain evidence and suggest review steps. They do not execute production SQL.</p>
+        </article>
+        <article>
+          <h3>Why not redirect PostgresAudit?</h3>
+          <p>PostgresAudit should remain the PostgreSQL specialist property. This domain is the broader category site.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>
+      <strong>Database Optimization Tool</strong>
+      <p>Evidence-backed database performance review for small businesses and small software teams.</p>
+    </div>
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="/postgresql/">PostgreSQL</a>
+      <a href="/database-optimization/">Database optimization</a>
+      <a href="/database-optimization-audit/">Audit</a>
+      <a href="/tools/">Tools</a>
+    </nav>
+  </footer>
+</body>
+</html>

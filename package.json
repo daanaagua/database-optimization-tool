@@ -1,0 +1,12 @@
+{
+  "name": "database-optimization-tool",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Static SEO site for Database Optimization Tool.",
+  "scripts": {
+    "build": "node scripts/validate-site.mjs",
+    "check": "node scripts/validate-site.mjs",
+    "deploy": "npx wrangler pages deploy public --project-name database-optimization-tool"
+  },
+  "devDependencies": {}
+}
