@@ -6,7 +6,7 @@
   "scripts": {
     "build": "node scripts/validate-site.mjs",
     "check": "node scripts/validate-site.mjs",
-    "deploy": "npx wrangler pages deploy public --project-name database-optimization-tool"
+    "deploy": "npx wrangler deploy"
   },
   "devDependencies": {}
 }

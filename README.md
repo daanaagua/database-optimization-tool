@@ -17,4 +17,4 @@ npx wrangler pages deploy public --project-name database-optimization-tool
 
 ## Deployment
 
-Cloudflare Pages serves the `public/` directory.
+Cloudflare Workers serves the `public/` directory through Workers static assets.
