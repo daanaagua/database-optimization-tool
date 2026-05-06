@@ -36,6 +36,10 @@ Use `Database Optimization Tool` as the brand and product category. Use `read-on
 
 保持 broad -> PostgreSQL 的内链方向：通用数据库优化、性能审计、SQL 调优、索引优化页面先解释跨数据库问题，再自然承接到 `/postgresql/` 或 `/postgresql/slow-query-audit/`。首页只把 broad supporting pages、`/how-it-works/`、`/faq/`、`/database-optimization-audit-request/` 和基础转化资产作为辅助入口展示，不改变首页 `Database Optimization Tool` 的 H1 和主定位。样例报告、只读边界、请求清单、how-it-works、FAQ 应回链 `/database-optimization-audit/` 或 `/database-optimization-audit-request/`，并在 PostgreSQL 适配时自然导向 `/postgresql/` 或 `/postgresql/collector/`。
 
+## Measurement
+
+当前只接入 event-ready skeleton：关键 CTA 带 `data-measure` 标记，`/assets/conversion-events.js` 只在 `window.gtag` 已存在时发送事件，不包含 GA loader 或 GTM。
+
 ## Non-Goals
 
 - Do not claim all databases are supported today.
