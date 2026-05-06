@@ -18,6 +18,7 @@ Use `Database Optimization Tool` as the brand and product category. Use `read-on
 - `/postgresql/`: current support page and strongest conversion surface.
 - `/database-optimization/`: light educational page for the broad keyword.
 - `/database-optimization-audit/`: audit-intent page.
+- `/database-optimization-audit-request/`: lightweight request asset for broad audit scope, PostgreSQL routing, or unsure triage before heavier evidence collection.
 - `/sample-database-optimization-report/`: broad sample report page showing deliverables, evidence, safety boundaries, and next-step expectations before a request.
 - `/read-only-database-audit/`: safety boundary page explaining access, data, production-write, storage, and approval limits for evidence-first audits.
 - `/database-optimization-checklist/`: request preparation checklist for symptoms, engine context, safe evidence, constraints, and route selection.
@@ -33,7 +34,7 @@ Use `Database Optimization Tool` as the brand and product category. Use `read-on
 
 ## Internal Linking
 
-保持 broad -> PostgreSQL 的内链方向：通用数据库优化、性能审计、SQL 调优、索引优化页面先解释跨数据库问题，再自然承接到 `/postgresql/` 或 `/postgresql/slow-query-audit/`。首页只把 broad supporting pages、`/how-it-works/`、`/faq/` 和基础转化资产作为辅助入口展示，不改变首页 `Database Optimization Tool` 的 H1 和主定位。样例报告、只读边界、请求清单、how-it-works、FAQ 应回链 `/database-optimization-audit/`，并在 PostgreSQL 适配时自然导向 `/postgresql/` 或 `/postgresql/collector/`。
+保持 broad -> PostgreSQL 的内链方向：通用数据库优化、性能审计、SQL 调优、索引优化页面先解释跨数据库问题，再自然承接到 `/postgresql/` 或 `/postgresql/slow-query-audit/`。首页只把 broad supporting pages、`/how-it-works/`、`/faq/`、`/database-optimization-audit-request/` 和基础转化资产作为辅助入口展示，不改变首页 `Database Optimization Tool` 的 H1 和主定位。样例报告、只读边界、请求清单、how-it-works、FAQ 应回链 `/database-optimization-audit/` 或 `/database-optimization-audit-request/`，并在 PostgreSQL 适配时自然导向 `/postgresql/` 或 `/postgresql/collector/`。
 
 ## Non-Goals
 
