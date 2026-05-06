@@ -4,18 +4,134 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Database Optimization Audit</title>
-  <meta name="description" content="A database optimization audit turns database evidence into prioritized findings, risk notes, and safe next steps before production changes.">
+  <meta name="description" content="A database optimization audit turns database evidence into prioritized findings, safe next steps, delivery expectations, and a PostgreSQL specialist request path.">
   <link rel="canonical" href="https://databaseoptimizationtool.com/database-optimization-audit/">
   <meta property="og:title" content="Database Optimization Audit">
-  <meta property="og:description" content="Turn database evidence into prioritized audit findings, risk notes, and safe next steps before production changes.">
+  <meta property="og:description" content="Turn database evidence into prioritized audit findings, risk notes, safe next steps, and clear PostgreSQL specialist handoff.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://databaseoptimizationtool.com/database-optimization-audit/">
   <meta property="og:site_name" content="Database Optimization Tool">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Database Optimization Audit">
-  <meta name="twitter:description" content="A database optimization audit path for slow queries, index evidence, table health risk, and human-reviewed next steps.">
+  <meta name="twitter:description" content="A database optimization audit path for slow queries, index evidence, table health risk, and a clear PostgreSQL specialist next step.">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/assets/styles.css">
+  <style>
+    @media (max-width: 700px) {
+      .site-header {
+        gap: 12px;
+      }
+
+      .brand,
+      .brand span {
+        min-width: 0;
+        max-width: 100%;
+      }
+
+      .brand span,
+      h1,
+      h2,
+      h3,
+      p,
+      a {
+        overflow-wrap: anywhere;
+      }
+
+      .nav {
+        flex-wrap: wrap;
+        gap: 10px;
+        overflow-x: visible;
+        padding-bottom: 0;
+      }
+
+      .nav a {
+        flex: 0 1 auto;
+      }
+
+      .nav .button-link {
+        width: auto;
+        min-height: 36px;
+        padding: 8px 12px;
+      }
+
+      .page-hero {
+        padding: clamp(56px, 16vw, 86px) clamp(16px, 5vw, 24px) clamp(42px, 12vw, 62px);
+      }
+
+      h1 {
+        font-size: clamp(2.1rem, 10vw, 2.9rem);
+        line-height: 1.08;
+        text-wrap: balance;
+      }
+
+      h2,
+      .section-head h2,
+      .callout h2 {
+        font-size: clamp(1.68rem, 7.6vw, 2.3rem);
+        line-height: 1.14;
+        text-wrap: balance;
+      }
+
+      .lede,
+      .section-head p {
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+
+      .button-link,
+      .secondary-link {
+        min-width: 0;
+        max-width: 100%;
+        min-height: 44px;
+        padding: 10px 14px;
+        line-height: 1.18;
+        text-align: center;
+        white-space: normal;
+      }
+
+      .card,
+      .step,
+      .callout {
+        padding: 20px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .page-hero {
+        padding-top: 48px;
+      }
+
+      h1 {
+        font-size: clamp(1.9rem, 8.6vw, 2.25rem);
+        line-height: 1.1;
+      }
+
+      h2,
+      .section-head h2,
+      .callout h2 {
+        font-size: clamp(1.55rem, 7vw, 2rem);
+        line-height: 1.15;
+      }
+
+      .eyebrow {
+        width: 100%;
+        justify-content: center;
+        line-height: 1.25;
+        white-space: normal;
+      }
+
+      .band {
+        padding-top: 48px;
+        padding-bottom: 56px;
+      }
+
+      .card,
+      .step,
+      .callout {
+        padding: 18px;
+      }
+    }
+  </style>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -50,10 +166,18 @@
           },
           {
             "@type": "Question",
-            "name": "Where does PostgreSQL fit in a database optimization audit?",
+            "name": "What can teams request from this database optimization audit page today?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "PostgreSQL is the current engine-specific downstream path for teams that need read-only evidence collection, slow query review, and reviewable recommendations."
+              "text": "Teams can use this page to prepare a database optimization audit scope. PostgreSQL teams can continue into the current specialist workflow at postgresaudit.com for read-only evidence collection and a reviewable report path."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does this page offer a formal audit for every database engine?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. For non-PostgreSQL databases, this page currently provides broad audit explanation and preparation guidance only. It does not claim a formal service workflow for MySQL, SQL Server, Oracle, or other engines."
             }
           }
         ]
@@ -80,16 +204,65 @@
     <section class="page-hero">
       <p class="eyebrow">Audit intent</p>
       <h1>A database optimization audit should explain what is slow and what evidence supports the next step.</h1>
-      <p class="lede">Use the audit to turn a vague performance complaint into a reviewable database optimization work plan backed by query, index, table, and capacity evidence.</p>
+      <p class="lede">Use the audit to turn a vague performance complaint into a reviewable work plan backed by query, index, table, capacity, and change-risk evidence. This page stays broad across database engines; PostgreSQL teams have the current specialist request path.</p>
     </section>
     <section class="band">
-      <div class="grid two">
-        <article class="step"><span class="number">1</span><h3>Collect evidence</h3><p>Start from database statistics, query patterns, table size, and index usage.</p></article>
-        <article class="step"><span class="number">2</span><h3>Prioritize risk</h3><p>Separate high-impact bottlenecks from cleanup tasks that can wait.</p></article>
-        <article class="step"><span class="number">3</span><h3>Explain tradeoffs</h3><p>Document why an index, query rewrite, maintenance change, or plan upgrade may help.</p></article>
-        <article class="step"><span class="number">4</span><h3>Require review</h3><p>Keep human approval in front of production SQL and configuration changes.</p></article>
+      <div class="section-head">
+        <p class="eyebrow">Current request options</p>
+        <h2>What you can ask for right now</h2>
+        <p>Use this page to decide whether you are ready for a database optimization audit request, or whether you should first prepare the evidence that makes a review useful.</p>
       </div>
-      <div class="callout"><h2>Move from broad audit to the right evidence path</h2><p>Start with the <a href="/database-optimization/">database optimization</a> model. Use the broader <a href="/database-performance-audit/">database performance audit</a> when symptoms are unclear, <a href="/sql-performance-tuning/">SQL performance tuning</a> when specific statements drive the risk, and <a href="/index-optimization/">index optimization</a> when access paths need review. Then use the PostgreSQL path when the database is PostgreSQL.</p><p><a class="button-link" href="/postgresql/">PostgreSQL optimization</a> <a class="button-link" href="/postgresql/slow-query-audit/">Slow query audit</a></p></div>
+      <div class="grid two">
+        <article class="card">
+          <h3>PostgreSQL teams</h3>
+          <p>Current next step: enter the specialist workflow for read-only collection, report preparation, and reviewable PostgreSQL findings.</p>
+          <a href="https://postgresaudit.com/?utm_source=databaseoptimizationtool&utm_medium=referral&utm_campaign=database_optimization_audit#collector-report">Start PostgreSQL collector report</a>
+        </article>
+        <article class="card">
+          <h3>Other database engines</h3>
+          <p>Current status: this page can help you frame scope, evidence, and risk. A formal non-PostgreSQL audit workflow is not offered here yet.</p>
+        </article>
+      </div>
+      <div class="callout"><h2>Current boundary</h2><p>This is a pre-conversion page, not a full SaaS product, support desk, managed tuning service, or production change system. PostgreSQL is the only engine with a real downstream specialist workflow today.</p></div>
+    </section>
+    <section class="band alt">
+      <div class="section-head">
+        <p class="eyebrow">Audit shape</p>
+        <h2>Expected deliverables and timing</h2>
+        <p>A useful audit should be evidence-first, reviewable, and limited to recommendations until a human owner approves production changes.</p>
+      </div>
+      <div class="grid two">
+        <article class="step"><span class="number">1</span><h3>Evidence inventory</h3><p>Queries, wait symptoms, index usage, table growth, configuration notes, capacity pressure, and incident context.</p></article>
+        <article class="step"><span class="number">2</span><h3>Prioritized findings</h3><p>A short list of likely bottlenecks ranked by impact, confidence, reversibility, and production risk.</p></article>
+        <article class="step"><span class="number">3</span><h3>Safe next steps</h3><p>Recommended experiments, indexes, query rewrites, maintenance checks, or configuration review points with approval gates.</p></article>
+        <article class="step"><span class="number">4</span><h3>Timing expectation</h3><p>Expect scoping first. PostgreSQL teams can move into the specialist report path; other engines should treat this as preparation guidance.</p></article>
+      </div>
+    </section>
+    <section class="band">
+      <div class="section-head">
+        <p class="eyebrow">Fit check</p>
+        <h2>Who this is for</h2>
+      </div>
+      <div class="grid two">
+        <article class="card"><h3>Good fit</h3><p>Teams with recurring slow queries, unclear index value, table growth concerns, capacity pressure, or production incidents that need a reviewable database optimization plan.</p></article>
+        <article class="card"><h3>Not a fit yet</h3><p>Teams looking for emergency production access, automatic fixes, guaranteed cost reduction, formal support for every database engine, or a paid SaaS workflow on this page.</p></article>
+      </div>
+      <div class="callout"><h2>Safety boundary</h2><p>The audit should not require production write access. Recommendations should stay read-only and evidence-based until your team reviews, tests, approves, and schedules any production SQL or configuration change.</p></div>
+    </section>
+    <section class="band alt">
+      <div class="section-head">
+        <p class="eyebrow">Preparation</p>
+        <h2>What to have ready</h2>
+        <p>You do not need perfect telemetry, but the request is stronger when the performance complaint is tied to evidence and business impact.</p>
+      </div>
+      <div class="grid">
+        <article class="step"><span class="number">A</span><h3>Database context</h3><p>Engine, version, hosting model, workload shape, scale, and the user-visible symptom.</p></article>
+        <article class="step"><span class="number">B</span><h3>Evidence sample</h3><p>Slow query examples, execution plans, index lists, table sizes, wait notes, or database statistics you can share safely.</p></article>
+        <article class="step"><span class="number">C</span><h3>Change limits</h3><p>Maintenance windows, approval rules, rollback expectations, data sensitivity, and changes your team will not accept.</p></article>
+      </div>
+    </section>
+    <section class="band">
+      <div class="callout"><h2>Move from broad audit to the right evidence path</h2><p>Start with the <a href="/database-optimization/">database optimization</a> model. Use the broader <a href="/database-performance-audit/">database performance audit</a> when symptoms are unclear, <a href="/sql-performance-tuning/">SQL performance tuning</a> when specific statements drive the risk, and <a href="/index-optimization/">index optimization</a> when access paths need review.</p><p>For PostgreSQL teams, the current real next step is the specialist collector report path.</p><p><a class="button-link" href="https://postgresaudit.com/?utm_source=databaseoptimizationtool&utm_medium=referral&utm_campaign=database_optimization_audit#collector-report">Continue to PostgreSQL workflow</a></p></div>
     </section>
   </main>
   <footer class="site-footer"><strong>Database Optimization Tool</strong><nav class="footer-links"><a href="/">Home</a><a href="/query-optimization/">Query optimization</a></nav></footer>

@@ -13,7 +13,7 @@
   <meta property="og:site_name" content="Database Optimization Tool">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="PostgreSQL Audit and Optimization Hub">
-  <meta name="twitter:description" content="Start PostgreSQL optimization with read-only evidence, local collection, and reviewable report scope.">
+  <meta name="twitter:description" content="Request PostgreSQL audit scope with read-only evidence, human review, and a clear specialist workflow.">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/assets/styles.css">
   <style>
@@ -279,6 +279,22 @@
               "@type": "Answer",
               "text": "Those workflows remain on the dedicated PostgreSQL specialist property. This category site explains the safe optimization route and when to escalate."
             }
+          },
+          {
+            "@type": "Question",
+            "name": "What happens after requesting PostgreSQL audit scope?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A human PostgreSQL specialist reviews the request, confirms the likely audit scope, and identifies the read-only evidence needed before any deeper review."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How quickly should teams expect a first reply?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The page sets an expectation of a preliminary reply and scope confirmation within one business day, not an instant automated report."
+            }
           }
         ]
       }
@@ -303,41 +319,72 @@
   <main>
     <section class="page-hero">
       <p class="eyebrow">PostgreSQL primary path</p>
-      <h1>PostgreSQL database optimization starts with read-only evidence.</h1>
-      <p class="lede">This hub routes PostgreSQL teams through a local collector model, defined audit scope, sample report expectations, and specialist escalation when account, pricing, or transaction work belongs on the dedicated PostgreSQL service.</p>
+      <h1>Request PostgreSQL audit scope before changing production.</h1>
+      <p class="lede">This hub routes PostgreSQL teams into a specialist workflow: confirm the problem, collect read-only evidence, receive human-reviewed scope notes, then decide whether a full audit belongs on the dedicated PostgreSQL service.</p>
       <div class="actions">
-        <a class="button-link" href="/postgresql/collector/">Review collector path</a>
-        <a class="secondary-link" href="/postgresql/sample-report/">View sample report scope</a>
+        <a class="button-link" href="https://postgresaudit.com/?utm_source=databaseoptimizationtool.com&amp;utm_medium=referral&amp;utm_campaign=postgresql_hub&amp;utm_content=hero_scope#collector-report">Request PostgreSQL audit scope</a>
+        <a class="secondary-link" href="/postgresql/collector/">Review read-only collector</a>
+        <a class="secondary-link" href="/postgresql/sample-report/">View sample report</a>
+      </div>
+      <div class="status-row" aria-label="Audit workflow expectations">
+        <span class="pill"><strong>First reply</strong> within one business day</span>
+        <span class="pill"><strong>Scope confirmation</strong> before evidence review</span>
+        <span class="pill"><strong>Boundary</strong> no production writes</span>
       </div>
     </section>
 
     <section class="band">
       <div class="section-head">
-        <h2>A category site should explain the safe path before sending teams to a specialist.</h2>
-        <p>PostgreSQL is the supported engine here. Teams that are still defining the general problem can start with the broad <a href="/database-performance-audit/">database performance audit</a>, <a href="/sql-performance-tuning/">SQL performance tuning</a>, or <a href="/index-optimization/">index optimization</a> guide before using this PostgreSQL route. MySQL and SQL Server stay roadmap surfaces until they have their own collector and evidence model.</p>
+        <h2>Use the specialist workflow when the database is already PostgreSQL.</h2>
+        <p>PostgreSQL is the supported engine here. The collector, sample report, and slow-query pages remain useful preparation links, but the primary next step is a scoped specialist review that confirms fit before deeper audit work. MySQL and SQL Server stay roadmap surfaces until they have their own collector and evidence model.</p>
       </div>
       <div class="grid">
-        <article class="card"><h3>Read-only by default</h3><p>The collector path is local and evidence-focused. It does not run migrations, create indexes, rewrite data, or make production writes.</p><a href="/postgresql/collector/">Collector setup</a></article>
-        <article class="card"><h3>Defined audit scope</h3><p>Findings center on slow query pressure, index candidates, unused index signals, table health, bloat risk, autovacuum drift, temp writes, and role review.</p><a href="/postgresql/slow-query-audit/">Slow query audit</a></article>
-        <article class="card"><h3>Report before action</h3><p>The output should be a prioritized review document with evidence, risk notes, and change suggestions that still require human approval.</p><a href="/postgresql/sample-report/">Sample report</a></article>
+        <article class="card"><h3>Confirm the audit fit</h3><p>Share the PostgreSQL symptoms, business impact, and whether read-only statistics can be collected. You should receive a preliminary reply and scope confirmation within one business day.</p><a href="https://postgresaudit.com/?utm_source=databaseoptimizationtool.com&amp;utm_medium=referral&amp;utm_campaign=postgresql_hub&amp;utm_content=scope_card#collector-report">Start specialist scope request</a></article>
+        <article class="card"><h3>Collect only safe evidence</h3><p>The collector path is local and evidence-focused. It does not run migrations, create indexes, rewrite data, or make production writes.</p><a href="/postgresql/collector/">Collector setup</a></article>
+        <article class="card"><h3>Review report shape first</h3><p>The output should be a prioritized review document with evidence, risk notes, and change suggestions that still require human approval.</p><a href="/postgresql/sample-report/">Sample report</a></article>
       </div>
     </section>
 
     <section class="band alt">
       <div class="section-head">
-        <h2>What the PostgreSQL route covers.</h2>
-        <p>The route is built for teams that need a first audit, launch readiness check, or tuning pass without granting broad production control.</p>
+        <h2>What you will receive.</h2>
+        <p>The first response is not an automated diagnosis. It is a human-reviewed scope checkpoint that tells you whether the PostgreSQL audit path fits and what evidence should come next.</p>
       </div>
       <div class="grid two">
-        <article class="step"><span class="number">1</span><h3>Prepare access</h3><p>Use a temporary least-privilege PostgreSQL role where possible. Avoid permanent credentials and avoid superuser access unless a safer path is impossible.</p></article>
-        <article class="step"><span class="number">2</span><h3>Run local collection</h3><p>Collect catalog and statistics evidence from the environment you control. The category site does not host billing, uploads, or account flows.</p></article>
-        <article class="step"><span class="number">3</span><h3>Review findings</h3><p>Prioritize hot paths first: expensive statements, missing index candidates, severe bloat, vacuum health, high temp writes, and configuration risk.</p></article>
-        <article class="step"><span class="number">4</span><h3>Escalate carefully</h3><p>Use the specialist PostgreSQL service when you need the hosted workflow, account handling, pricing, or transaction support.</p></article>
+        <article class="step"><span class="number">1</span><h3>Scope confirmation</h3><p>A short note confirming whether the issue looks suitable for PostgreSQL audit review, which workload area matters most, and which evidence is worth collecting first.</p></article>
+        <article class="step"><span class="number">2</span><h3>Evidence checklist</h3><p>A practical list of read-only inputs to prepare, such as PostgreSQL version, schema shape, slow query examples, pg_stat_statements availability, table size signals, and index context.</p></article>
+        <article class="step"><span class="number">3</span><h3>Audit outline</h3><p>Expected review areas can include slow query pressure, index candidates, unused index signals, table health, bloat risk, autovacuum drift, temp writes, and role review.</p></article>
+        <article class="step"><span class="number">4</span><h3>Next-step recommendation</h3><p>You receive a human-reviewed recommendation for whether to continue with a fuller PostgreSQL audit, prepare more evidence, or use a narrower slow-query review.</p></article>
       </div>
       <div class="callout">
         <h2>Need the specialist workflow?</h2>
-        <p>This site explains the PostgreSQL optimization category and safe audit path. Account, pricing, transaction, and dedicated PostgreSQL service workflows remain on the specialist property.</p>
-        <p><a class="button-link" href="https://postgresaudit.com/">Open PostgreSQL specialist site</a></p>
+        <p>Request PostgreSQL audit scope when you can describe the workload, the visible performance symptom, and whether read-only evidence can be collected. You should receive a preliminary reply and scope confirmation within one business day.</p>
+        <p><a class="button-link" href="https://postgresaudit.com/?utm_source=databaseoptimizationtool.com&amp;utm_medium=referral&amp;utm_campaign=postgresql_hub&amp;utm_content=midpage_workflow#collector-report">Request PostgreSQL audit scope</a></p>
+      </div>
+    </section>
+
+    <section class="band">
+      <div class="section-head">
+        <h2>What to prepare before requesting scope.</h2>
+        <p>You do not need to grant production control from this page. A useful request gives enough context for a PostgreSQL specialist to decide which read-only evidence matters.</p>
+      </div>
+      <div class="grid">
+        <article class="card"><h3>Workload and symptom</h3><p>Prepare the PostgreSQL version, hosting environment, workload type, recent traffic changes, slow endpoints, timeout patterns, lock waits, or cost pressure.</p></article>
+        <article class="card"><h3>Query and schema context</h3><p>Bring representative slow queries, EXPLAIN output if available, major table sizes, critical indexes, and whether pg_stat_statements is enabled.</p><a href="/postgresql/slow-query-audit/">Review slow-query path</a></article>
+        <article class="card"><h3>Safety constraints</h3><p>State whether production access is restricted, whether only snapshots are allowed, and what approval process is required before any recommendation can become a change.</p></article>
+      </div>
+    </section>
+
+    <section class="band alt">
+      <div class="section-head">
+        <h2>What we will not do.</h2>
+        <p>The PostgreSQL path stays evidence-first. Recommendations are reviewed by a human and remain separate from production changes until your team approves them.</p>
+      </div>
+      <div class="grid two">
+        <article class="step"><span class="number">A</span><h3>No production writes</h3><p>This route does not create indexes, run migrations, rewrite data, change configuration, or execute automated tuning against production.</p></article>
+        <article class="step"><span class="number">B</span><h3>No broad credential request</h3><p>Use least-privilege, temporary, read-only access where possible. Avoid superuser credentials and permanent access unless a safer path is impossible.</p></article>
+        <article class="step"><span class="number">C</span><h3>No instant automated report claim</h3><p>The first step is preliminary reply and scope confirmation. A fuller audit depends on the evidence available and the specialist workflow outside this category page.</p></article>
+        <article class="step"><span class="number">D</span><h3>No full SaaS workflow here</h3><p>This site does not host billing, accounts, uploads, transactions, or managed report delivery. Those workflows belong on the PostgreSQL specialist service.</p></article>
       </div>
     </section>
   </main>
