@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Database Optimization Checklist Before an Audit</title>
+  <meta name="description" content="Database optimization checklist for preparing symptoms, evidence, safety constraints, timing, and next steps before requesting an audit.">
+  <link rel="canonical" href="https://databaseoptimizationtool.com/database-optimization-checklist/">
+  <meta property="og:title" content="Database Optimization Checklist Before an Audit">
+  <meta property="og:description" content="Prepare a database optimization audit request with symptoms, evidence, access boundaries, and approval constraints.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://databaseoptimizationtool.com/database-optimization-checklist/">
+  <meta property="og:site_name" content="Database Optimization Tool">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Database Optimization Checklist Before an Audit">
+  <meta name="twitter:description" content="A practical checklist for safer database optimization audit requests.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <style>
+    @media (max-width: 560px) {
+      .brand,
+      .brand span,
+      .nav,
+      .nav a,
+      .page-hero h1,
+      .section-head h2,
+      .callout h2,
+      .lede,
+      .card,
+      .step,
+      .comparison th,
+      .comparison td {
+        min-width: 0;
+        overflow-wrap: anywhere;
+      }
+
+      .nav {
+        flex-wrap: wrap;
+        gap: 10px 14px;
+        overflow: visible;
+      }
+
+      .site-header .button-link {
+        width: auto;
+        min-height: 36px;
+        padding-inline: 12px;
+      }
+
+      .page-hero h1 {
+        font-size: clamp(2.28rem, 10vw, 3rem);
+      }
+
+      .section-head h2,
+      .callout h2 {
+        font-size: clamp(1.85rem, 8vw, 2.4rem);
+      }
+
+      .lede,
+      .section-head p {
+        font-size: 1.03rem;
+      }
+
+      .comparison {
+        display: table;
+        table-layout: fixed;
+        overflow: visible;
+      }
+
+      .comparison th,
+      .comparison td {
+        padding: 12px 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="Database Optimization Tool home">
+      <svg aria-hidden="true" class="brand-mark" height="26" viewBox="0 0 64 64" width="26" xmlns="http://www.w3.org/2000/svg">
+        <path class="brand-mark-stroke" d="M32 6 48.5 12.2v14.9c0 10.9-5.8 19-16.5 25.9C21.3 46.1 15.5 38 15.5 27.1V12.2L32 6Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4.8"></path>
+        <ellipse class="brand-mark-stroke" cx="32" cy="21.4" fill="none" rx="10.2" ry="4.6" stroke="currentColor" stroke-width="4.2"></ellipse>
+        <path class="brand-mark-stroke" d="M21.8 21.4v16.2c0 2.6 4.6 4.8 10.2 4.8s10.2-2.2 10.2-4.8V21.4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4.2"></path>
+        <path class="brand-mark-stroke" d="M21.8 37.6c0 2.6 4.6 4.8 10.2 4.8s10.2-2.2 10.2-4.8" fill="none" stroke="currentColor" stroke-width="4.2"></path>
+        <path class="brand-mark-accent" d="M24.8 31h14.4" fill="none" stroke="var(--brand-accent, #087b84)" stroke-linecap="round" stroke-width="5.8"></path>
+      </svg>
+      <span>Database Optimization Tool</span>
+    </a>
+    <nav class="nav" aria-label="Main navigation"><a href="/database-optimization/">Database optimization</a><a href="/database-optimization-audit/">Audit</a><a href="/sample-database-optimization-report/">Sample report</a><a class="button-link" href="/read-only-database-audit/">Read-only</a></nav>
+  </header>
+  <main>
+    <section class="page-hero">
+      <p class="eyebrow">Request preparation</p>
+      <h1>Prepare a database optimization request before anyone changes production.</h1>
+      <p class="lede">Use this checklist to turn a slow database complaint into an audit-ready brief: symptom, engine, evidence, risk limits, access boundary, and next step. It works as a broad preparation page before PostgreSQL-specific routing.</p>
+      <div class="actions">
+        <a class="button-link" href="/database-optimization-audit/">Start audit scope</a>
+        <a class="secondary-link" href="/sample-database-optimization-report/">View sample report</a>
+      </div>
+    </section>
+
+    <section class="band">
+      <div class="section-head">
+        <p class="eyebrow">Checklist</p>
+        <h2>Prepare these inputs first</h2>
+        <p>You do not need every item. The goal is enough context to decide which evidence matters next.</p>
+      </div>
+      <div class="grid">
+        <article class="card"><h3>Business symptom</h3><p>Name the slow workflow, affected users, error rate or timeout pattern, and when the problem became visible.</p></article>
+        <article class="card"><h3>Database context</h3><p>List the engine, version, hosting model, approximate size, traffic pattern, and recent migrations or deploys.</p></article>
+        <article class="card"><h3>Query evidence</h3><p>Bring representative slow queries, execution plans, logs, statement statistics, or screenshots your team can safely share.</p></article>
+        <article class="card"><h3>Schema and index context</h3><p>Prepare major table sizes, relevant indexes, known unused indexes, write-heavy tables, and constraints around index changes.</p></article>
+        <article class="card"><h3>Safety constraints</h3><p>State whether production access is allowed, whether only read-only evidence is acceptable, and what data cannot be shared.</p></article>
+        <article class="card"><h3>Approval path</h3><p>Identify who can approve tests, who can approve production changes, and what maintenance window or rollback plan is required.</p></article>
+      </div>
+    </section>
+
+    <section class="band alt">
+      <div class="section-head">
+        <p class="eyebrow">Flow</p>
+        <h2>How the request should move</h2>
+        <p>The process should narrow scope before collecting more evidence or proposing production work.</p>
+      </div>
+      <div class="grid">
+        <article class="step"><span class="number">1</span><h3>Describe the symptom</h3><p>Start with the workflow, user impact, timing, recent changes, and whether the issue is urgent or recurring.</p></article>
+        <article class="step"><span class="number">2</span><h3>Attach safe evidence</h3><p>Share logs, plans, table sizes, index context, or read-only statistics that do not expose secrets or unrestricted customer data.</p></article>
+        <article class="step"><span class="number">3</span><h3>Confirm boundaries</h3><p>Define read-only expectations, data sensitivity, allowed environments, and changes that require explicit approval.</p></article>
+        <article class="step"><span class="number">4</span><h3>Pick the right route</h3><p>Use the broad audit page for preparation. Use the PostgreSQL path when the database is PostgreSQL and a specialist workflow fits.</p></article>
+        <article class="step"><span class="number">5</span><h3>Review a report shape</h3><p>Compare expectations against the sample report before assuming the audit will deliver automatic changes.</p></article>
+        <article class="step"><span class="number">6</span><h3>Approve next action</h3><p>Move from findings to staging tests, rollout planning, or deeper investigation only after a human owner signs off.</p></article>
+      </div>
+    </section>
+
+    <section class="band">
+      <div class="section-head">
+        <p class="eyebrow">Copyable brief</p>
+        <h2>Use this request structure</h2>
+        <p>Keep the first request short. The best first response usually confirms scope, not a final fix.</p>
+      </div>
+      <table class="comparison">
+        <thead><tr><th>Field</th><th>What to write</th></tr></thead>
+        <tbody>
+          <tr><td>Symptom</td><td>Which workflow is slow, when it happens, and who is affected.</td></tr>
+          <tr><td>Environment</td><td>Database engine, version, hosting provider, approximate size, and critical tables if known.</td></tr>
+          <tr><td>Evidence</td><td>Slow query examples, EXPLAIN output, query stats, index list, table growth, or wait notes you can share safely.</td></tr>
+          <tr><td>Boundary</td><td>Read-only only, no production writes, no automatic index creation, and any data that cannot leave your environment.</td></tr>
+          <tr><td>Decision needed</td><td>Whether you need triage, a sample report expectation, a PostgreSQL specialist route, or a broader audit preparation step.</td></tr>
+        </tbody>
+      </table>
+      <div class="callout"><h2>Choose the next page</h2><p>Review the <a href="/read-only-database-audit/">read-only audit boundary</a> when access is the concern. Review the <a href="/sample-database-optimization-report/">sample report</a> when deliverables are unclear. PostgreSQL teams can continue to the <a href="/postgresql/">PostgreSQL audit hub</a>.</p></div>
+    </section>
+  </main>
+  <footer class="site-footer"><strong>Database Optimization Tool</strong><nav class="footer-links"><a href="/database-optimization-audit/">Audit</a><a href="/sample-database-optimization-report/">Sample report</a><a href="/postgresql/">PostgreSQL</a></nav></footer>
+</body>
+</html>

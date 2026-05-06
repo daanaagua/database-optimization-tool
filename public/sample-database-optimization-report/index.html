@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sample Database Optimization Report</title>
+  <meta name="description" content="Sample database optimization report structure for evidence, findings, safety boundaries, timing, and review-ready next steps before production changes.">
+  <link rel="canonical" href="https://databaseoptimizationtool.com/sample-database-optimization-report/">
+  <meta property="og:title" content="Sample Database Optimization Report">
+  <meta property="og:description" content="Review what a database optimization report should include before requesting an audit.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://databaseoptimizationtool.com/sample-database-optimization-report/">
+  <meta property="og:site_name" content="Database Optimization Tool">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Sample Database Optimization Report">
+  <meta name="twitter:description" content="Evidence-first report sections, boundaries, and next steps for database optimization work.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <style>
+    @media (max-width: 560px) {
+      .brand,
+      .brand span,
+      .nav,
+      .nav a,
+      .page-hero h1,
+      .section-head h2,
+      .callout h2,
+      .lede,
+      .card,
+      .step,
+      .comparison th,
+      .comparison td {
+        min-width: 0;
+        overflow-wrap: anywhere;
+      }
+
+      .nav {
+        flex-wrap: wrap;
+        gap: 10px 14px;
+        overflow: visible;
+      }
+
+      .site-header .button-link {
+        width: auto;
+        min-height: 36px;
+        padding-inline: 12px;
+      }
+
+      .page-hero h1 {
+        font-size: clamp(2.28rem, 10vw, 3rem);
+      }
+
+      .section-head h2,
+      .callout h2 {
+        font-size: clamp(1.85rem, 8vw, 2.4rem);
+      }
+
+      .lede,
+      .section-head p {
+        font-size: 1.03rem;
+      }
+
+      .comparison {
+        display: table;
+        table-layout: fixed;
+        overflow: visible;
+      }
+
+      .comparison th,
+      .comparison td {
+        padding: 12px 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="Database Optimization Tool home">
+      <svg aria-hidden="true" class="brand-mark" height="26" viewBox="0 0 64 64" width="26" xmlns="http://www.w3.org/2000/svg">
+        <path class="brand-mark-stroke" d="M32 6 48.5 12.2v14.9c0 10.9-5.8 19-16.5 25.9C21.3 46.1 15.5 38 15.5 27.1V12.2L32 6Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4.8"></path>
+        <ellipse class="brand-mark-stroke" cx="32" cy="21.4" fill="none" rx="10.2" ry="4.6" stroke="currentColor" stroke-width="4.2"></ellipse>
+        <path class="brand-mark-stroke" d="M21.8 21.4v16.2c0 2.6 4.6 4.8 10.2 4.8s10.2-2.2 10.2-4.8V21.4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4.2"></path>
+        <path class="brand-mark-stroke" d="M21.8 37.6c0 2.6 4.6 4.8 10.2 4.8s10.2-2.2 10.2-4.8" fill="none" stroke="currentColor" stroke-width="4.2"></path>
+        <path class="brand-mark-accent" d="M24.8 31h14.4" fill="none" stroke="var(--brand-accent, #087b84)" stroke-linecap="round" stroke-width="5.8"></path>
+      </svg>
+      <span>Database Optimization Tool</span>
+    </a>
+    <nav class="nav" aria-label="Main navigation"><a href="/database-optimization/">Database optimization</a><a href="/database-optimization-audit/">Audit</a><a href="/read-only-database-audit/">Read-only</a><a class="button-link" href="/database-optimization-checklist/">Checklist</a></nav>
+  </header>
+  <main>
+    <section class="page-hero">
+      <p class="eyebrow">Sample report</p>
+      <h1>A database optimization report should show evidence before recommendations.</h1>
+      <p class="lede">Use this broad sample report model to understand what an audit should return: visible symptoms, database evidence, ranked findings, review notes, timing, and safety boundaries. It does not promise automatic fixes for every database engine.</p>
+      <div class="actions">
+        <a class="button-link" href="/database-optimization-audit/">Start audit scope</a>
+        <a class="secondary-link" href="/read-only-database-audit/">Review safety boundary</a>
+      </div>
+    </section>
+
+    <section class="band">
+      <div class="section-head">
+        <p class="eyebrow">Report sections</p>
+        <h2>What the report should include</h2>
+        <p>The useful output is a short decision document, not a pile of raw database metrics.</p>
+      </div>
+      <div class="grid">
+        <article class="card"><h3>Executive summary</h3><p>The affected workflow, current symptom, likely database pressure, impact estimate, confidence level, and recommended review order.</p></article>
+        <article class="card"><h3>Evidence inventory</h3><p>Representative queries, execution plans, index lists, table sizes, wait notes, growth signals, hosting limits, and maintenance context.</p></article>
+        <article class="card"><h3>Prioritized findings</h3><p>Findings ranked by user impact, confidence, reversibility, production risk, and whether more evidence is needed before acting.</p></article>
+        <article class="card"><h3>Change guidance</h3><p>Recommended experiments, query rewrites, index candidates, maintenance checks, or configuration review points with approval gates.</p></article>
+        <article class="card"><h3>Safety notes</h3><p>What was not read, what was not changed, what needs staging validation, and which recommendations require a human owner.</p></article>
+        <article class="card"><h3>Next-step queue</h3><p>A small action list that separates low-risk checks, deeper investigation, and production changes that need scheduling.</p></article>
+      </div>
+    </section>
+
+    <section class="band alt">
+      <div class="section-head">
+        <p class="eyebrow">Sample finding</p>
+        <h2>How a finding should be written</h2>
+        <p>Each finding should make the evidence, risk, and next action reviewable by a developer, DBA, or technical owner.</p>
+      </div>
+      <table class="comparison">
+        <thead><tr><th>Field</th><th>Sample content</th></tr></thead>
+        <tbody>
+          <tr><td>Symptom</td><td>Checkout latency rises during afternoon traffic spikes.</td></tr>
+          <tr><td>Evidence</td><td>Two read-heavy statements account for most visible query time; table growth and index selectivity need review.</td></tr>
+          <tr><td>Recommendation</td><td>Run EXPLAIN on representative values, test one index candidate in staging, and confirm write overhead before production rollout.</td></tr>
+          <tr><td>Boundary</td><td>No production SQL is executed by the report. A human owner must approve any index, query, or configuration change.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="band">
+      <div class="section-head">
+        <p class="eyebrow">Boundaries</p>
+        <h2>What this sample report does not claim</h2>
+        <p>The report model is intentionally conservative so it does not overstate automation, certainty, or production safety.</p>
+      </div>
+      <div class="grid two">
+        <article class="step"><span class="number">1</span><h3>No automatic optimization</h3><p>The report can recommend checks and changes, but it does not automatically create indexes, rewrite SQL, or tune production settings.</p></article>
+        <article class="step"><span class="number">2</span><h3>No guaranteed outcome</h3><p>Findings should describe confidence and risk. They should not guarantee performance improvement before testing.</p></article>
+        <article class="step"><span class="number">3</span><h3>No broad engine promise</h3><p>This page is a broad report model. PostgreSQL has the current specialist path; MySQL and SQL Server remain planned surfaces.</p></article>
+        <article class="step"><span class="number">4</span><h3>No unrestricted access need</h3><p>A useful audit starts from safe evidence and explicit constraints, not production write credentials.</p></article>
+      </div>
+      <div class="callout"><h2>Ready to prepare scope?</h2><p>Review the <a href="/database-optimization-checklist/">database optimization checklist</a> before asking for audit scope. PostgreSQL teams can also view the more specific <a href="/postgresql/sample-report/">PostgreSQL sample report</a>.</p></div>
+    </section>
+  </main>
+  <footer class="site-footer"><strong>Database Optimization Tool</strong><nav class="footer-links"><a href="/database-optimization-audit/">Audit</a><a href="/database-optimization-checklist/">Checklist</a><a href="/postgresql/">PostgreSQL</a></nav></footer>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Read-Only Database Audit Safety Boundary</title>
+  <meta name="description" content="Read-only database audit safety boundaries: what evidence can be reviewed, what access is not needed, and what requires human approval.">
+  <link rel="canonical" href="https://databaseoptimizationtool.com/read-only-database-audit/">
+  <meta property="og:title" content="Read-Only Database Audit Safety Boundary">
+  <meta property="og:description" content="Understand database audit access, data, production write, and approval boundaries before requesting review.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://databaseoptimizationtool.com/read-only-database-audit/">
+  <meta property="og:site_name" content="Database Optimization Tool">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Read-Only Database Audit Safety Boundary">
+  <meta name="twitter:description" content="Safety boundaries for evidence-first database audits.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <style>
+    @media (max-width: 560px) {
+      .brand,
+      .brand span,
+      .nav,
+      .nav a,
+      .page-hero h1,
+      .section-head h2,
+      .callout h2,
+      .lede,
+      .card,
+      .step,
+      .comparison th,
+      .comparison td {
+        min-width: 0;
+        overflow-wrap: anywhere;
+      }
+
+      .nav {
+        flex-wrap: wrap;
+        gap: 10px 14px;
+        overflow: visible;
+      }
+
+      .site-header .button-link {
+        width: auto;
+        min-height: 36px;
+        padding-inline: 12px;
+      }
+
+      .page-hero h1 {
+        font-size: clamp(2.28rem, 10vw, 3rem);
+      }
+
+      .section-head h2,
+      .callout h2 {
+        font-size: clamp(1.85rem, 8vw, 2.4rem);
+      }
+
+      .lede,
+      .section-head p {
+        font-size: 1.03rem;
+      }
+
+      .comparison {
+        display: table;
+        table-layout: fixed;
+        overflow: visible;
+      }
+
+      .comparison th,
+      .comparison td {
+        padding: 12px 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="Database Optimization Tool home">
+      <svg aria-hidden="true" class="brand-mark" height="26" viewBox="0 0 64 64" width="26" xmlns="http://www.w3.org/2000/svg">
+        <path class="brand-mark-stroke" d="M32 6 48.5 12.2v14.9c0 10.9-5.8 19-16.5 25.9C21.3 46.1 15.5 38 15.5 27.1V12.2L32 6Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4.8"></path>
+        <ellipse class="brand-mark-stroke" cx="32" cy="21.4" fill="none" rx="10.2" ry="4.6" stroke="currentColor" stroke-width="4.2"></ellipse>
+        <path class="brand-mark-stroke" d="M21.8 21.4v16.2c0 2.6 4.6 4.8 10.2 4.8s10.2-2.2 10.2-4.8V21.4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4.2"></path>
+        <path class="brand-mark-stroke" d="M21.8 37.6c0 2.6 4.6 4.8 10.2 4.8s10.2-2.2 10.2-4.8" fill="none" stroke="currentColor" stroke-width="4.2"></path>
+        <path class="brand-mark-accent" d="M24.8 31h14.4" fill="none" stroke="var(--brand-accent, #087b84)" stroke-linecap="round" stroke-width="5.8"></path>
+      </svg>
+      <span>Database Optimization Tool</span>
+    </a>
+    <nav class="nav" aria-label="Main navigation"><a href="/database-optimization/">Database optimization</a><a href="/database-optimization-audit/">Audit</a><a href="/sample-database-optimization-report/">Sample report</a><a class="button-link" href="/database-optimization-checklist/">Checklist</a></nav>
+  </header>
+  <main>
+    <section class="page-hero">
+      <p class="eyebrow">Safety boundary</p>
+      <h1>A read-only database audit should keep production changes outside the evidence step.</h1>
+      <p class="lede">This page defines the access boundary for cautious database optimization work: what can be reviewed, what should not be requested by default, what is not saved here, and what still requires human approval.</p>
+      <div class="actions">
+        <a class="button-link" href="/database-optimization-audit/">Start audit scope</a>
+        <a class="secondary-link" href="/sample-database-optimization-report/">View report model</a>
+      </div>
+    </section>
+
+    <section class="band">
+      <div class="section-head">
+        <p class="eyebrow">Access model</p>
+        <h2>What read-only means here</h2>
+        <p>The first audit step should collect enough evidence to reason about performance without giving a tool production control.</p>
+      </div>
+      <div class="grid">
+        <article class="card"><h3>Metadata and statistics</h3><p>Safe inputs can include query statistics, index definitions, table sizes, growth signals, wait notes, version details, and hosting constraints.</p></article>
+        <article class="card"><h3>Representative examples</h3><p>You can share sanitized slow queries, EXPLAIN output, endpoint symptoms, or snapshots when direct access is not appropriate.</p></article>
+        <article class="card"><h3>Temporary scoped access</h3><p>If access is used, it should be limited, documented, and removable after evidence collection. Avoid broad owner credentials.</p></article>
+        <article class="card"><h3>No production writes</h3><p>The audit evidence step should not run migrations, create indexes, modify tables, update rows, vacuum tables, or change configuration.</p></article>
+        <article class="card"><h3>No automatic SQL changes</h3><p>Recommendations can include SQL or index candidates, but execution belongs to a human-approved rollout process.</p></article>
+        <article class="card"><h3>No secret dumping</h3><p>Do not send passwords, full dumps, private customer data, or unrestricted cloud credentials through this broad site.</p></article>
+      </div>
+    </section>
+
+    <section class="band alt">
+      <div class="section-head">
+        <p class="eyebrow">Decision table</p>
+        <h2>What the audit can and cannot do</h2>
+        <p>Use this boundary before involving production systems or sending database evidence outside your team.</p>
+      </div>
+      <table class="comparison">
+        <thead><tr><th>Question</th><th>Boundary</th></tr></thead>
+        <tbody>
+          <tr><td>Does it need database credentials?</td><td>Not always. Start with exported evidence or sanitized examples. If credentials are used, prefer temporary read-only access.</td></tr>
+          <tr><td>Does it read production data?</td><td>It should prefer metadata, statistics, plans, and samples. Sensitive row data is not required for the broad preparation path.</td></tr>
+          <tr><td>Does this site save user data?</td><td>This static site does not provide upload, account, or hosted collector storage. Do not paste secrets into it.</td></tr>
+          <tr><td>Will it execute write operations?</td><td>No. Production writes, index creation, SQL rewrites, and configuration changes require separate human approval.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="band">
+      <div class="section-head">
+        <p class="eyebrow">Human approval</p>
+        <h2>Where review must stay manual</h2>
+        <p>Read-only evidence can identify likely next steps. It cannot make production risk disappear.</p>
+      </div>
+      <div class="grid two">
+        <article class="step"><span class="number">1</span><h3>Before collecting evidence</h3><p>Confirm what data can be shared, who owns access, and whether snapshots are safer than direct database reads.</p></article>
+        <article class="step"><span class="number">2</span><h3>Before testing recommendations</h3><p>Review proposed queries, index candidates, maintenance checks, or configuration changes in a non-production path first.</p></article>
+        <article class="step"><span class="number">3</span><h3>Before production rollout</h3><p>Assign an owner, rollback plan, maintenance window, monitoring check, and clear approval before any change is applied.</p></article>
+        <article class="step"><span class="number">4</span><h3>Before expanding scope</h3><p>If the issue is PostgreSQL-specific, move to the specialist collector path instead of broadening access on the main site.</p></article>
+      </div>
+      <div class="callout"><h2>Need a safer request?</h2><p>Use the <a href="/database-optimization-checklist/">request checklist</a> to describe symptoms and constraints first. PostgreSQL teams can review the <a href="/postgresql/collector/">PostgreSQL collector path</a>.</p></div>
+    </section>
+  </main>
+  <footer class="site-footer"><strong>Database Optimization Tool</strong><nav class="footer-links"><a href="/database-optimization-audit/">Audit</a><a href="/database-optimization-checklist/">Checklist</a><a href="/postgresql/collector/">PostgreSQL collector</a></nav></footer>
+</body>
+</html>

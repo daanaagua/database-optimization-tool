@@ -7,6 +7,9 @@ const required = [
   "postgresql/index.html",
   "database-optimization/index.html",
   "database-optimization-audit/index.html",
+  "sample-database-optimization-report/index.html",
+  "read-only-database-audit/index.html",
+  "database-optimization-checklist/index.html",
   "database-performance-audit/index.html",
   "sql-performance-tuning/index.html",
   "index-optimization/index.html",
@@ -49,6 +52,9 @@ for (const file of htmlFiles) {
 const sitemap = readFileSync(join(root, "sitemap.xml"), "utf8");
 const llms = readFileSync(join(root, "llms.txt"), "utf8");
 for (const path of [
+  "/sample-database-optimization-report/",
+  "/read-only-database-audit/",
+  "/database-optimization-checklist/",
   "/database-performance-audit/",
   "/sql-performance-tuning/",
   "/index-optimization/"

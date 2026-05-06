@@ -17,6 +17,9 @@ Important pages:
 - https://databaseoptimizationtool.com/postgresql/slow-query-audit/
 - https://databaseoptimizationtool.com/database-optimization/
 - https://databaseoptimizationtool.com/database-optimization-audit/
+- https://databaseoptimizationtool.com/sample-database-optimization-report/
+- https://databaseoptimizationtool.com/read-only-database-audit/
+- https://databaseoptimizationtool.com/database-optimization-checklist/
 - https://databaseoptimizationtool.com/database-performance-audit/
 - https://databaseoptimizationtool.com/sql-performance-tuning/
 - https://databaseoptimizationtool.com/index-optimization/
