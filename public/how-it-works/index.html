@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How Database Optimization Audits Work</title>
+  <meta name="description" content="How an evidence-first database optimization audit moves from symptoms to scope, human review, recommendations, and approval without automatic production writes.">
+  <link rel="canonical" href="https://databaseoptimizationtool.com/how-it-works/">
+  <meta property="og:title" content="How Database Optimization Audits Work">
+  <meta property="og:description" content="Understand the read-only, human-reviewed database optimization workflow from symptom to approved next step.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://databaseoptimizationtool.com/how-it-works/">
+  <meta property="og:site_name" content="Database Optimization Tool">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="How Database Optimization Audits Work">
+  <meta name="twitter:description" content="A broad database optimization audit workflow built around evidence, scope, review, recommendations, and human approval.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <style>
+    @media (max-width: 560px) {
+      .brand,
+      .brand span,
+      .nav,
+      .nav a,
+      .page-hero h1,
+      .section-head h2,
+      .callout h2,
+      .lede,
+      .card,
+      .step,
+      .comparison th,
+      .comparison td {
+        min-width: 0;
+        overflow-wrap: anywhere;
+      }
+
+      .nav {
+        flex-wrap: wrap;
+        gap: 10px 14px;
+        overflow: visible;
+      }
+
+      .site-header .button-link {
+        width: auto;
+        min-height: 36px;
+        padding-inline: 12px;
+      }
+
+      .page-hero h1 {
+        font-size: clamp(2.24rem, 10vw, 3rem);
+      }
+
+      .section-head h2,
+      .callout h2 {
+        font-size: clamp(1.82rem, 8vw, 2.4rem);
+      }
+
+      .lede,
+      .section-head p {
+        font-size: 1.03rem;
+      }
+
+      .comparison {
+        display: table;
+        table-layout: fixed;
+        overflow: visible;
+      }
+
+      .comparison th,
+      .comparison td {
+        padding: 12px 10px;
+      }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://databaseoptimizationtool.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "How It Works",
+            "item": "https://databaseoptimizationtool.com/how-it-works/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Does the database optimization workflow make production changes automatically?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. The workflow is evidence-first and human-reviewed. It does not automatically create indexes, rewrite SQL, update rows, change configuration, or write to production databases."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What happens before recommendations are made?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The process starts with the visible symptom, then gathers safe evidence, narrows scope, and puts findings through review before recommendations are written."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does this page save user database data?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. This static page does not provide uploads, accounts, hosted collector storage, or report storage, so it does not save user database content, credentials, queries, files, or customer data. PostgreSQL specialist workflows are downstream paths with their own evidence-sharing rules."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Where should PostgreSQL teams go after reading this workflow?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "PostgreSQL teams can use the broad workflow for orientation, then continue into the PostgreSQL path when they need the current specialist collector and report workflow."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="Database Optimization Tool home">
+      <svg aria-hidden="true" class="brand-mark" height="26" viewBox="0 0 64 64" width="26" xmlns="http://www.w3.org/2000/svg">
+        <path class="brand-mark-stroke" d="M32 6 48.5 12.2v14.9c0 10.9-5.8 19-16.5 25.9C21.3 46.1 15.5 38 15.5 27.1V12.2L32 6Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4.8"></path>
+        <ellipse class="brand-mark-stroke" cx="32" cy="21.4" fill="none" rx="10.2" ry="4.6" stroke="currentColor" stroke-width="4.2"></ellipse>
+        <path class="brand-mark-stroke" d="M21.8 21.4v16.2c0 2.6 4.6 4.8 10.2 4.8s10.2-2.2 10.2-4.8V21.4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4.2"></path>
+        <path class="brand-mark-stroke" d="M21.8 37.6c0 2.6 4.6 4.8 10.2 4.8s10.2-2.2 10.2-4.8" fill="none" stroke="currentColor" stroke-width="4.2"></path>
+        <path class="brand-mark-accent" d="M24.8 31h14.4" fill="none" stroke="var(--brand-accent, #087b84)" stroke-linecap="round" stroke-width="5.8"></path>
+      </svg>
+      <span>Database Optimization Tool</span>
+    </a>
+    <nav class="nav" aria-label="Main navigation"><a href="/database-optimization-audit/">Audit</a><a href="/database-optimization-checklist/">Checklist</a><a href="/sample-database-optimization-report/">Sample report</a><a class="button-link" href="/postgresql/">PostgreSQL path</a></nav>
+  </header>
+  <main>
+    <section class="page-hero">
+      <p class="eyebrow">How it works</p>
+      <h1>Database optimization should move from symptom to approved next step, not straight to production changes.</h1>
+      <p class="lede">This workflow explains how a broad database optimization audit turns a slow workflow, timeout, cost spike, or capacity concern into evidence, scope, review, recommendations, and a human-approved action plan.</p>
+      <div class="actions">
+        <a class="button-link" href="/database-optimization-audit/">Start audit scope</a>
+        <a class="secondary-link" href="/database-optimization-checklist/">Prepare the checklist</a>
+      </div>
+    </section>
+
+    <section class="band">
+      <div class="section-head">
+        <p class="eyebrow">Process</p>
+        <h2>The audit path has six gates</h2>
+        <p>Each gate narrows uncertainty before anyone treats a recommendation as production-ready.</p>
+      </div>
+      <div class="grid">
+        <article class="step"><span class="number">1</span><h3>Symptom</h3><p>Name the user-visible problem: slow checkout, dashboard timeouts, batch lag, lock waits, cloud cost pressure, or recurring incident risk.</p></article>
+        <article class="step"><span class="number">2</span><h3>Evidence</h3><p>Collect safe signals such as slow query examples, plans, query statistics, index context, table sizes, wait notes, hosting limits, and recent deploy history.</p></article>
+        <article class="step"><span class="number">3</span><h3>Scope</h3><p>Separate the likely database problem from application code, infrastructure, data growth, release timing, and business constraints that shape the review.</p></article>
+        <article class="step"><span class="number">4</span><h3>Review</h3><p>A human reviewer checks the evidence, confidence level, missing context, production risk, and whether PostgreSQL should enter the specialist path.</p></article>
+        <article class="step"><span class="number">5</span><h3>Recommendation</h3><p>The output is a ranked set of next steps: deeper evidence, staging tests, query rewrites, index candidates, maintenance checks, or configuration review points.</p></article>
+        <article class="step"><span class="number">6</span><h3>Approval</h3><p>Production work waits for your owner, test plan, rollback path, maintenance window, and explicit approval. The audit does not approve itself.</p></article>
+      </div>
+    </section>
+
+    <section class="band alt">
+      <div class="section-head">
+        <p class="eyebrow">Boundaries</p>
+        <h2>What stays outside the automatic path</h2>
+        <p>The site is meant to support safer decisions, not become an unrestricted database operator.</p>
+      </div>
+      <table class="comparison">
+        <thead><tr><th>Boundary</th><th>What it means</th></tr></thead>
+        <tbody>
+          <tr><td>Read-only first</td><td>The first step should use metadata, statistics, query plans, logs, and sanitized examples. Broad production write access is not required for scoping.</td></tr>
+          <tr><td>Human review</td><td>Findings are reviewed before recommendations are treated as useful. Confidence, impact, reversibility, and missing evidence are part of the decision.</td></tr>
+          <tr><td>No automatic production writes</td><td>The workflow does not create indexes, rewrite deployed SQL, update data, run migrations, change configuration, or schedule maintenance automatically.</td></tr>
+          <tr><td>No hosted storage on this page</td><td>This static page does not provide uploads, accounts, hosted collector storage, or report storage, so it does not save user database content, credentials, queries, files, or customer data. PostgreSQL specialist workflows are downstream paths with their own evidence-sharing rules.</td></tr>
+          <tr><td>Approval required</td><td>Any index, SQL, configuration, vacuum, migration, or rollout action belongs to your team's approval and change-management process.</td></tr>
+        </tbody>
+      </table>
+      <div class="callout"><h2>Need the access details first?</h2><p>Review the <a href="/read-only-database-audit/">read-only database audit boundary</a> before sharing evidence, credentials, or production context.</p></div>
+    </section>
+
+    <section class="band">
+      <div class="section-head">
+        <p class="eyebrow">Where to go</p>
+        <h2>Use the right next page for your stage</h2>
+        <p>The workflow is broad by design. It helps MySQL, SQL Server, PostgreSQL, and other database teams frame the same decision path without claiming every engine has a formal service workflow here today.</p>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <h3>When the problem is audit-ready</h3>
+          <p>Use the audit page to turn symptom, evidence, scope, and safety limits into a clear request for review.</p>
+          <a href="/database-optimization-audit/">Open database optimization audit</a>
+        </article>
+        <article class="card">
+          <h3>When evidence is scattered</h3>
+          <p>Use the checklist to prepare the business symptom, database context, query evidence, safety constraints, and approval path.</p>
+          <a href="/database-optimization-checklist/">Open preparation checklist</a>
+        </article>
+        <article class="card">
+          <h3>When deliverables are unclear</h3>
+          <p>Use the sample report to see how evidence, findings, risk notes, recommendations, and approval boundaries should be presented.</p>
+          <a href="/sample-database-optimization-report/">Open sample report</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="band alt">
+      <div class="section-head">
+        <p class="eyebrow">PostgreSQL routing</p>
+        <h2>PostgreSQL can move into the specialist path</h2>
+        <p>If your evidence points to PostgreSQL, use this broad workflow to frame the issue, then continue into the PostgreSQL pages for the current specialist collector and sample report path.</p>
+      </div>
+      <div class="grid two">
+        <article class="step"><span class="number">PG</span><h3>Use broad framing first</h3><p>Describe the symptom, share safe evidence, define production boundaries, and confirm who approves any database change.</p></article>
+        <article class="step"><span class="number">01</span><h3>Then enter PostgreSQL scope</h3><p>Move to PostgreSQL when the engine, evidence, and next step fit that specialist route instead of a generic database optimization explanation.</p></article>
+      </div>
+      <div class="callout"><h2>Ready to choose the path?</h2><p>Start with the <a href="/database-optimization-audit/">broad audit scope</a>, prepare inputs with the <a href="/database-optimization-checklist/">checklist</a>, or compare expectations against the <a href="/sample-database-optimization-report/">sample report</a>. PostgreSQL teams can continue to the <a href="/postgresql/">PostgreSQL audit hub</a>.</p></div>
+    </section>
+  </main>
+  <footer class="site-footer"><strong>Database Optimization Tool</strong><nav class="footer-links"><a href="/database-optimization-audit/">Audit</a><a href="/database-optimization-checklist/">Checklist</a><a href="/sample-database-optimization-report/">Sample report</a><a href="/postgresql/">PostgreSQL</a></nav></footer>
+</body>
+</html>

@@ -10,6 +10,8 @@ const required = [
   "sample-database-optimization-report/index.html",
   "read-only-database-audit/index.html",
   "database-optimization-checklist/index.html",
+  "how-it-works/index.html",
+  "faq/index.html",
   "database-performance-audit/index.html",
   "sql-performance-tuning/index.html",
   "index-optimization/index.html",
@@ -55,6 +57,8 @@ for (const path of [
   "/sample-database-optimization-report/",
   "/read-only-database-audit/",
   "/database-optimization-checklist/",
+  "/how-it-works/",
+  "/faq/",
   "/database-performance-audit/",
   "/sql-performance-tuning/",
   "/index-optimization/"

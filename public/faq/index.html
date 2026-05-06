@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Database Optimization Audit FAQ</title>
+  <meta name="description" content="FAQ for database optimization audits: read-only access, data handling, production risk, deliverables, timing, support scope, and PostgreSQL coverage boundaries.">
+  <link rel="canonical" href="https://databaseoptimizationtool.com/faq/">
+  <meta property="og:title" content="Database Optimization Audit FAQ">
+  <meta property="og:description" content="Answers about permissions, data, production safety, deliverables, timing, support scope, and PostgreSQL boundaries for database optimization audits.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://databaseoptimizationtool.com/faq/">
+  <meta property="og:site_name" content="Database Optimization Tool">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Database Optimization Audit FAQ">
+  <meta name="twitter:description" content="Read the safety, data, scope, timing, and engine support boundaries before requesting a database optimization audit.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is Database Optimization Tool only for PostgreSQL?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. The site keeps a broad database optimization position for audit planning, SQL performance tuning, index review, reporting, and safety boundaries. PostgreSQL is the current specialist path with the clearest supported workflow. Other engines are not presented as fully supported audit workflows yet."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What permissions are needed for an audit?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Start with the least access that can provide useful evidence: metadata, statistics, execution plans, representative queries, table and index information, and hosting constraints. A temporary read-only role or sanitized exports are preferred over owner credentials."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does the audit make production changes?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. The audit step is evidence-first. It does not create indexes, run migrations, rewrite data, restart services, change configuration, or automatically optimize a production database. Any change still needs human review, staging validation, approval, and rollback planning."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does this site save user database data or reports?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. These FAQ and trust pages are static pages without uploads, accounts, hosted collector storage, or report storage, so they do not save user database content, credentials, queries, files, or customer data. PostgreSQL specialist workflows are downstream paths with their own evidence-sharing rules."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What deliverable should I expect?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Expect a review document with symptoms, evidence, ranked findings, risk notes, suggested next checks, and production-change considerations. The sample report shows the intended shape before you request scope."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are all database engines fully supported?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. The broad site explains the optimization model across databases, but it does not claim that every engine has a complete automated collector or specialist audit path. PostgreSQL has the strongest current coverage."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://databaseoptimizationtool.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "FAQ",
+            "item": "https://databaseoptimizationtool.com/faq/"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/">Database Optimization Tool</a>
+    <nav class="nav" aria-label="Main navigation"><a href="/database-optimization/">Database optimization</a><a href="/database-optimization-audit/">Audit</a><a href="/sample-database-optimization-report/">Sample report</a><a href="/postgresql/">PostgreSQL</a><a class="button-link" href="/read-only-database-audit/">Read-only</a></nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <p class="eyebrow">FAQ</p>
+      <h1>Database optimization audit questions, scope, and safety boundaries.</h1>
+      <p class="lede">Use this FAQ to check permissions, data expectations, production risk, deliverables, timing, and engine support before requesting database optimization work. The site stays broad, while PostgreSQL is the clearest specialist path available now.</p>
+      <div class="actions">
+        <a class="button-link" href="/database-optimization-audit/">Start audit scope</a>
+        <a class="secondary-link" href="/sample-database-optimization-report/">View sample report</a>
+      </div>
+    </section>
+
+    <section class="band">
+      <div class="section-head">
+        <p class="eyebrow">Quick routing</p>
+        <h2>Choose the page that answers the next risk.</h2>
+        <p>FAQ answers are intentionally bounded. Use the deeper pages when you need evidence examples, report shape, or PostgreSQL-specific collection details.</p>
+      </div>
+      <div class="grid">
+        <article class="card"><h3>Access and production safety</h3><p>Review the <a href="/read-only-database-audit/">read-only database audit</a> boundary before sharing credentials, exports, or production context.</p></article>
+        <article class="card"><h3>Expected output</h3><p>Compare deliverables with the <a href="/sample-database-optimization-report/">sample database optimization report</a> before assuming the audit will apply automatic fixes.</p></article>
+        <article class="card"><h3>Broad audit intake</h3><p>Use <a href="/database-optimization-audit/">database optimization audit</a> when symptoms, engine, risk level, and evidence availability still need scoping.</p></article>
+        <article class="card"><h3>PostgreSQL path</h3><p>Use <a href="/postgresql/">PostgreSQL optimization</a> when the workload is PostgreSQL and you need the current specialist collector and report path.</p></article>
+      </div>
+    </section>
+
+    <section class="band alt">
+      <div class="section-head">
+        <p class="eyebrow">Answers</p>
+        <h2>Common database optimization audit questions.</h2>
+        <p>These answers avoid two promises the site should not make: automatic production optimization and full support for every database engine.</p>
+      </div>
+      <div class="faq">
+        <article>
+          <h3>Is Database Optimization Tool only for PostgreSQL?</h3>
+          <p>No. The site keeps a broad database optimization position for audit planning, SQL performance tuning, index review, reporting, and safety boundaries. PostgreSQL is the current specialist path with the clearest supported workflow. MySQL, SQL Server, and other engines should be treated as broader planning or roadmap context unless a specific supported workflow is documented.</p>
+        </article>
+        <article>
+          <h3>What permissions are needed?</h3>
+          <p>Start with the least access that can provide useful evidence: metadata, query statistics, execution plans, index definitions, table sizes, version details, and hosting constraints. A temporary read-only role or sanitized exports are preferred over owner credentials. The <a href="/read-only-database-audit/">read-only boundary</a> explains the safer access model.</p>
+        </article>
+        <article>
+          <h3>What data should be shared?</h3>
+          <p>Useful inputs include symptoms, affected workflows, representative slow queries, EXPLAIN output, table and index inventories, growth signals, maintenance notes, and cloud or hosting limits. Avoid secrets, unrestricted connection strings, full customer data dumps, and unrelated application data when sanitized evidence is enough.</p>
+        </article>
+        <article>
+          <h3>Does this site save user database data or reports?</h3>
+          <p>No. These FAQ and trust pages are static pages without uploads, accounts, hosted collector storage, or report storage, so they do not save user database content, credentials, queries, files, or customer data. PostgreSQL specialist workflows are downstream paths with their own evidence-sharing rules.</p>
+        </article>
+        <article>
+          <h3>Does the audit make production changes?</h3>
+          <p>No. The audit step is evidence-first. It does not create indexes, run migrations, rewrite data, restart services, change configuration, or automatically optimize a production database. Any change still needs human review, staging validation, approval, and rollback planning.</p>
+        </article>
+        <article>
+          <h3>Can the report guarantee a performance fix?</h3>
+          <p>No. The report can rank likely causes and next actions based on available evidence, but production behavior depends on workload, query shape, data distribution, application behavior, hosting limits, and release process. Recommendations are review inputs, not automatic changes or guaranteed outcomes.</p>
+        </article>
+        <article>
+          <h3>What deliverable should I expect?</h3>
+          <p>Expect a review document with symptoms, evidence, ranked findings, confidence notes, production risk, suggested next checks, and change considerations. The <a href="/sample-database-optimization-report/">sample report</a> shows the intended shape before you request an audit.</p>
+        </article>
+        <article>
+          <h3>How long does an audit take?</h3>
+          <p>Timing depends on scope, engine, access, evidence quality, and how many production constraints must be checked. A narrow question with clean evidence can move faster than a broad database review with unclear symptoms. Use <a href="/database-optimization-audit/">database optimization audit</a> to define scope first.</p>
+        </article>
+        <article>
+          <h3>What is inside the support scope?</h3>
+          <p>The broad scope includes query performance symptoms, index decisions, table growth signals, maintenance risk, evidence inventory, prioritization, and next-step planning. It does not replace monitoring, incident response, application refactoring, cloud account administration, or DBA ownership of production changes.</p>
+        </article>
+        <article>
+          <h3>Are all database engines fully supported?</h3>
+          <p>No. The broad site explains the optimization model across databases, but it does not claim that every engine has a complete automated collector or specialist audit path. PostgreSQL has the strongest current coverage through the <a href="/postgresql/">PostgreSQL optimization</a> pages.</p>
+        </article>
+        <article>
+          <h3>What if I use MySQL, SQL Server, or another engine?</h3>
+          <p>Use the broad pages to define symptoms, evidence, and risk boundaries first. Engine-specific review depends on documented support, available diagnostics, and whether the required evidence can be interpreted safely. Do not assume PostgreSQL-specific collector behavior applies to other engines.</p>
+        </article>
+        <article>
+          <h3>Do I need to connect a production database?</h3>
+          <p>Not always. Sanitized artifacts, exported plans, representative queries, statistics snapshots, and schema inventories may be enough for early scoping. If direct access is appropriate, keep it temporary, read-only, and removable.</p>
+        </article>
+        <article>
+          <h3>What should I prepare before asking for help?</h3>
+          <p>Prepare the affected workflow, symptoms, timing, database engine and version, hosting model, representative queries, available plans, major tables, critical indexes, recent changes, and production constraints. If the database is PostgreSQL, start with the <a href="/postgresql/">PostgreSQL hub</a> after broad scope is clear.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="band">
+      <div class="callout"><h2>Need a narrower next step?</h2><p>Start with <a href="/database-optimization-audit/">database optimization audit</a> for broad scope, review <a href="/read-only-database-audit/">read-only access</a> for safety, compare the <a href="/sample-database-optimization-report/">sample report</a> for deliverables, and use <a href="/postgresql/">PostgreSQL optimization</a> when the engine is PostgreSQL.</p></div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><strong>Database Optimization Tool</strong><nav class="footer-links"><a href="/">Home</a><a href="/database-optimization-audit/">Audit</a><a href="/sample-database-optimization-report/">Sample report</a><a href="/read-only-database-audit/">Read-only</a><a href="/postgresql/">PostgreSQL</a></nav></footer>
+</body>
+</html>
