@@ -7,13 +7,13 @@
   <meta name="description" content="A database optimization audit turns database evidence into prioritized findings, risk notes, and safe next steps before production changes.">
   <link rel="canonical" href="https://databaseoptimizationtool.com/database-optimization-audit/">
   <meta property="og:title" content="Database Optimization Audit">
-  <meta property="og:description" content="Turn PostgreSQL evidence into prioritized audit findings, risk notes, and safe next steps before production changes.">
+  <meta property="og:description" content="Turn database evidence into prioritized audit findings, risk notes, and safe next steps before production changes.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://databaseoptimizationtool.com/database-optimization-audit/">
   <meta property="og:site_name" content="Database Optimization Tool">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Database Optimization Audit">
-  <meta name="twitter:description" content="A PostgreSQL-first audit path for slow queries, index evidence, table health risk, and human-reviewed next steps.">
+  <meta name="twitter:description" content="A database optimization audit path for slow queries, index evidence, table health risk, and human-reviewed next steps.">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/assets/styles.css">
   <script type="application/ld+json">
@@ -50,10 +50,10 @@
           },
           {
             "@type": "Question",
-            "name": "Which database audit path is available now?",
+            "name": "Where does PostgreSQL fit in a database optimization audit?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "The current executable path is PostgreSQL. Other SQL engines are roadmap surfaces and are not claimed as supported collectors today."
+              "text": "PostgreSQL is the current engine-specific downstream path for teams that need read-only evidence collection, slow query review, and reviewable recommendations."
             }
           }
         ]
@@ -80,7 +80,7 @@
     <section class="page-hero">
       <p class="eyebrow">Audit intent</p>
       <h1>A database optimization audit should explain what is slow and what evidence supports the next step.</h1>
-      <p class="lede">The current executable path is PostgreSQL: use it to turn a vague performance complaint into a reviewable work plan backed by query, index, and table evidence.</p>
+      <p class="lede">Use the audit to turn a vague performance complaint into a reviewable database optimization work plan backed by query, index, table, and capacity evidence.</p>
     </section>
     <section class="band">
       <div class="grid two">
@@ -89,7 +89,7 @@
         <article class="step"><span class="number">3</span><h3>Explain tradeoffs</h3><p>Document why an index, query rewrite, maintenance change, or plan upgrade may help.</p></article>
         <article class="step"><span class="number">4</span><h3>Require review</h3><p>Keep human approval in front of production SQL and configuration changes.</p></article>
       </div>
-      <div class="callout"><h2>Start with PostgreSQL</h2><p>Use the PostgreSQL workflow today for read-only evidence collection and audit review. MySQL and SQL Server remain roadmap surfaces.</p><p><a class="button-link" href="/postgresql/">Review PostgreSQL evidence</a></p></div>
+      <div class="callout"><h2>Move from broad audit to the right evidence path</h2><p>Start with the <a href="/database-optimization/">database optimization</a> model, then use the PostgreSQL path when the database is PostgreSQL. For query-heavy incidents, go directly to the focused slow query review.</p><p><a class="button-link" href="/postgresql/">PostgreSQL optimization</a> <a class="button-link" href="/postgresql/slow-query-audit/">Slow query audit</a></p></div>
     </section>
   </main>
   <footer class="site-footer"><strong>Database Optimization Tool</strong><nav class="footer-links"><a href="/">Home</a><a href="/query-optimization/">Query optimization</a></nav></footer>

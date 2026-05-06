@@ -7,13 +7,13 @@
   <meta name="description" content="Query optimization helps small teams find expensive SQL, reduce slow paths, and review index candidates with evidence.">
   <link rel="canonical" href="https://databaseoptimizationtool.com/query-optimization/">
   <meta property="og:title" content="Query Optimization for Small Teams">
-  <meta property="og:description" content="Find PostgreSQL queries that put pressure on real business workflows, then review indexes and rewrites with evidence.">
+  <meta property="og:description" content="Find database queries that put pressure on real business workflows, then review indexes and rewrites with evidence.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://databaseoptimizationtool.com/query-optimization/">
   <meta property="og:site_name" content="Database Optimization Tool">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Query Optimization for Small Teams">
-  <meta name="twitter:description" content="A PostgreSQL-first query optimization guide for expensive SQL, slow paths, temp writes, and index review.">
+  <meta name="twitter:description" content="A query optimization guide for expensive SQL, slow paths, temp writes, and evidence-based index review.">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/assets/styles.css">
   <script type="application/ld+json">
@@ -50,10 +50,10 @@
           },
           {
             "@type": "Question",
-            "name": "Which query optimization workflow is available now?",
+            "name": "How does query optimization connect to database optimization?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "The current workflow is PostgreSQL-first. It focuses on read-only evidence and reviewable recommendations before any production database change."
+              "text": "Query optimization is one part of database optimization. It finds expensive SQL first, then connects that evidence to index review, table health, capacity, and engine-specific next steps."
             }
           }
         ]
@@ -80,7 +80,7 @@
     <section class="page-hero">
       <p class="eyebrow">Query path</p>
       <h1>Query optimization starts by finding the SQL that affects real work.</h1>
-      <p class="lede">A small business does not need every database theory term on day one. The PostgreSQL path available now helps identify which checkout, booking, inventory, or report query is putting pressure on the database.</p>
+      <p class="lede">Query optimization is a broad database optimization task: identify which checkout, booking, inventory, or report query is putting pressure on the database before changing indexes or infrastructure.</p>
     </section>
     <section class="band">
       <div class="grid">
@@ -88,7 +88,7 @@
         <article class="card"><h3>Mean time</h3><p>High mean time points to heavy individual queries that may block important workflows.</p></article>
         <article class="card"><h3>Temp writes</h3><p>Temp files can signal sort or join pressure that deserves EXPLAIN review.</p></article>
       </div>
-      <div class="callout"><h2>Use the PostgreSQL workflow</h2><p>Review query pressure through the current PostgreSQL audit path before planning index changes, rewrites, or infrastructure upgrades.</p><p><a class="button-link" href="/postgresql/">Review PostgreSQL evidence</a></p></div>
+      <div class="callout"><h2>Place query work inside broader database optimization</h2><p>Use the <a href="/database-optimization/">database optimization</a> guide to connect query evidence with index, table, and capacity decisions. When the database is PostgreSQL, continue into the engine-specific optimization path or the focused slow query audit.</p><p><a class="button-link" href="/postgresql/">PostgreSQL optimization</a> <a class="button-link" href="/postgresql/slow-query-audit/">Slow query audit</a></p></div>
     </section>
   </main>
   <footer class="site-footer"><strong>Database Optimization Tool</strong><nav class="footer-links"><a href="/">Home</a><a href="/database-optimization-audit/">Audit</a></nav></footer>
