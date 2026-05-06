@@ -39,14 +39,14 @@
     </section>
     <section class="band">
       <div class="grid">
-        <article class="card"><h3>Queries</h3><p><a href="/query-optimization/">Find SQL</a> that reads too much data, sorts too much data, or runs too often.</p></article>
-        <article class="card"><h3>Indexes</h3><p>Add useful indexes, review composite candidates, and remove waste only after evidence supports it.</p></article>
+        <article class="card"><h3>Queries</h3><p><a href="/query-optimization/">Find SQL</a> that reads too much data, sorts too much data, or runs too often. Use the <a href="/sql-performance-tuning/">SQL performance tuning</a> guide when the problem is still database-neutral.</p></article>
+        <article class="card"><h3>Indexes</h3><p>Add useful indexes, review composite candidates, and remove waste only after evidence supports it. Start with the broad <a href="/index-optimization/">index optimization</a> path before engine-specific index review.</p></article>
         <article class="card"><h3>Tables</h3><p>Watch growth, bloat, dead rows, and maintenance signals that affect everyday speed.</p></article>
         <article class="card"><h3>Settings</h3><p>Review memory and maintenance configuration carefully instead of copying tuning snippets.</p></article>
         <article class="card"><h3>Cloud limits</h3><p>Understand whether the problem is query shape, database size, plan limits, or instance scale.</p></article>
-        <article class="card"><h3>Review process</h3><p>Use a <a href="/database-optimization-audit/">database optimization audit</a>, EXPLAIN, staging checks, and rollout plans before production changes.</p></article>
+        <article class="card"><h3>Review process</h3><p>Use a <a href="/database-optimization-audit/">database optimization audit</a>, <a href="/database-performance-audit/">database performance audit</a>, EXPLAIN, staging checks, and rollout plans before production changes.</p></article>
       </div>
-      <div class="callout"><h2>From broad optimization to engine-specific evidence</h2><p>Use this page for the general database optimization model. When the database is PostgreSQL, continue to the <a href="/postgresql/">PostgreSQL optimization path</a> or the focused <a href="/postgresql/slow-query-audit/">PostgreSQL slow query audit</a>.</p></div>
+      <div class="callout"><h2>From broad optimization to engine-specific evidence</h2><p>Use this page for the general database optimization model, then narrow the work with the <a href="/database-performance-audit/">database performance audit</a>, <a href="/sql-performance-tuning/">SQL performance tuning</a>, or <a href="/index-optimization/">index optimization</a> guide. When the database is PostgreSQL, continue to the <a href="/postgresql/">PostgreSQL optimization path</a> or the focused <a href="/postgresql/slow-query-audit/">PostgreSQL slow query audit</a>.</p></div>
     </section>
   </main>
   <footer class="site-footer"><strong>Database Optimization Tool</strong><nav class="footer-links"><a href="/">Home</a><a href="/postgresql/">PostgreSQL</a><a href="/tools/">Tools</a></nav></footer>

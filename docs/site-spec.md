@@ -18,10 +18,17 @@ Use `Database Optimization Tool` as the brand and product category. Use `read-on
 - `/postgresql/`: current support page and strongest conversion surface.
 - `/database-optimization/`: light educational page for the broad keyword.
 - `/database-optimization-audit/`: audit-intent page.
+- `/database-performance-audit/`: broad supporting page for performance-audit symptoms before engine-specific work.
+- `/sql-performance-tuning/`: broad supporting page for SQL tuning concepts before PostgreSQL slow-query work.
+- `/index-optimization/`: broad supporting page for index planning before PostgreSQL-specific index review.
 - `/query-optimization/`: query-intent page.
 - `/tools/`: tool and service comparison page.
 - `/mysql/`: planned-support page.
 - `/sql-server/`: planned-support page.
+
+## Internal Linking
+
+保持 broad -> PostgreSQL 的内链方向：通用数据库优化、性能审计、SQL 调优、索引优化页面先解释跨数据库问题，再自然承接到 `/postgresql/` 或 `/postgresql/slow-query-audit/`。首页只把 3 个 broad supporting pages 作为辅助入口展示，不改变首页 `Database Optimization Tool` 的 H1 和主定位。
 
 ## Non-Goals
 

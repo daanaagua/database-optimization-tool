@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Database Performance Audit</title>
+  <meta name="description" content="A database performance audit turns slow application symptoms into measurable database findings, prioritized risks, and reviewable optimization steps.">
+  <link rel="canonical" href="https://databaseoptimizationtool.com/database-performance-audit/">
+  <meta property="og:title" content="Database Performance Audit">
+  <meta property="og:description" content="Turn slow application symptoms into measurable database performance findings, risk priorities, and reviewable next steps.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://databaseoptimizationtool.com/database-performance-audit/">
+  <meta property="og:site_name" content="Database Optimization Tool">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Database Performance Audit">
+  <meta name="twitter:description" content="A broad database performance audit path for latency, workload pressure, query evidence, index risk, and safe optimization review.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://databaseoptimizationtool.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Database Performance Audit",
+            "item": "https://databaseoptimizationtool.com/database-performance-audit/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What does a database performance audit check first?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It starts with measurable symptoms such as slow transactions, timeout patterns, high database load, query timing, index usage, and capacity pressure."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How is a database performance audit different from a general database optimization project?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The audit creates evidence and priorities before changes are made. The optimization project uses those findings to plan query, index, table, configuration, or capacity work."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Where does PostgreSQL fit after a broad database performance audit?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "When the audited database is PostgreSQL, the findings can continue into a PostgreSQL-specific optimization path for engine-specific query, index, vacuum, and configuration review."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="Database Optimization Tool home">
+      <svg aria-hidden="true" class="brand-mark" height="26" viewBox="0 0 64 64" width="26" xmlns="http://www.w3.org/2000/svg">
+        <path class="brand-mark-stroke" d="M32 6 48.5 12.2v14.9c0 10.9-5.8 19-16.5 25.9C21.3 46.1 15.5 38 15.5 27.1V12.2L32 6Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4.8"></path>
+        <ellipse class="brand-mark-stroke" cx="32" cy="21.4" fill="none" rx="10.2" ry="4.6" stroke="currentColor" stroke-width="4.2"></ellipse>
+        <path class="brand-mark-stroke" d="M21.8 21.4v16.2c0 2.6 4.6 4.8 10.2 4.8s10.2-2.2 10.2-4.8V21.4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4.2"></path>
+        <path class="brand-mark-stroke" d="M21.8 37.6c0 2.6 4.6 4.8 10.2 4.8s10.2-2.2 10.2-4.8" fill="none" stroke="currentColor" stroke-width="4.2"></path>
+        <path class="brand-mark-accent" d="M24.8 31h14.4" fill="none" stroke="var(--brand-accent, #087b84)" stroke-linecap="round" stroke-width="5.8"></path>
+      </svg>
+      <span>Database Optimization Tool</span>
+    </a>
+    <nav class="nav" aria-label="Main navigation"><a href="/database-optimization/">Database optimization</a><a href="/query-optimization/">Query optimization</a><a href="/tools/">Tools</a><a class="button-link" href="/">Home</a></nav>
+  </header>
+  <main>
+    <section class="page-hero">
+      <p class="eyebrow">Performance audit intent</p>
+      <h1>A database performance audit turns slow systems into measurable findings.</h1>
+      <p class="lede">Use a database performance audit when latency, timeouts, CPU pressure, lock waits, or report delays are visible to the business but the database cause is still unclear.</p>
+    </section>
+    <section class="band">
+      <div class="grid">
+        <article class="card"><h3>User-visible latency</h3><p>Connect slow checkout, booking, search, dashboard, and reporting paths to the database calls behind them.</p></article>
+        <article class="card"><h3>Workload pressure</h3><p>Review load patterns, concurrency, waits, memory pressure, temporary work, storage growth, and connection behavior.</p></article>
+        <article class="card"><h3>Query and index evidence</h3><p>Separate expensive SQL, missing index opportunities, stale access patterns, and table growth from infrastructure guesswork.</p></article>
+      </div>
+      <div class="callout"><h2>Audit before tuning</h2><p>A database performance audit should not start with a random index or configuration change. It should explain which workload is slow, which database evidence supports the finding, what risk exists, and which optimization step deserves review first.</p></div>
+    </section>
+    <section class="band">
+      <div class="grid two">
+        <article class="step"><span class="number">1</span><h3>Map symptoms</h3><p>List the slow workflows, affected users, time windows, and service-level impact.</p></article>
+        <article class="step"><span class="number">2</span><h3>Collect database facts</h3><p>Use query timing, plans, index usage, wait signals, table size, and capacity metrics.</p></article>
+        <article class="step"><span class="number">3</span><h3>Rank findings</h3><p>Prioritize bottlenecks by user impact, change risk, confidence, and operational cost.</p></article>
+        <article class="step"><span class="number">4</span><h3>Review next steps</h3><p>Turn findings into human-reviewed query, index, maintenance, schema, or capacity work.</p></article>
+      </div>
+      <div class="callout"><h2>Move from performance audit to the right optimization path</h2><p>Use the <a href="/database-optimization/">database optimization</a> guide when the audit points to broad query, index, table, and capacity tradeoffs. Use the <a href="/query-optimization/">query optimization</a> path when a small set of SQL statements explains most of the impact.</p><p><a class="button-link" href="/database-optimization/">Database optimization</a> <a class="button-link" href="/query-optimization/">Query optimization</a></p></div>
+    </section>
+    <section class="band">
+      <div class="grid">
+        <article class="card"><h3>What does a database performance audit check first?</h3><p>Start with measurable symptoms: slow transactions, timeout patterns, high database load, query timing, index usage, and capacity pressure.</p></article>
+        <article class="card"><h3>How is it different from database optimization?</h3><p>The audit creates evidence and priorities before changes are made. Optimization uses those findings to plan reviewable improvements.</p></article>
+        <article class="card"><h3>Where does PostgreSQL fit?</h3><p>When the database is PostgreSQL, continue from the broad audit into the <a href="/postgresql/">PostgreSQL optimization</a> path for engine-specific review.</p></article>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><strong>Database Optimization Tool</strong><nav class="footer-links"><a href="/">Home</a><a href="/database-optimization-audit/">Audit</a><a href="/postgresql/">PostgreSQL</a></nav></footer>
+</body>
+</html>

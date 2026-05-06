@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SQL Performance Tuning Guide | Database Optimization Tool</title>
+  <meta name="description" content="SQL performance tuning guide for finding slow SQL, reading execution evidence, improving indexes, reducing scans, and validating safer database changes.">
+  <link rel="canonical" href="https://databaseoptimizationtool.com/sql-performance-tuning/">
+  <meta property="og:title" content="SQL Performance Tuning Guide">
+  <meta property="og:description" content="A practical SQL performance tuning path for slow queries, execution evidence, index review, rewrites, and safe validation.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://databaseoptimizationtool.com/sql-performance-tuning/">
+  <meta property="og:site_name" content="Database Optimization Tool">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="SQL Performance Tuning Guide | Database Optimization Tool">
+  <meta name="twitter:description" content="Tune SQL with evidence: identify high-impact statements, review plans, improve indexes, and validate changes safely.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://databaseoptimizationtool.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "SQL Performance Tuning",
+            "item": "https://databaseoptimizationtool.com/sql-performance-tuning/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is SQL performance tuning?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "SQL performance tuning is the process of finding high-impact SQL statements, reviewing execution evidence, improving query shape or indexes, and validating that the change reduces real workload cost."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Should SQL tuning start with indexes or query rewrites?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Start with evidence. Some slow SQL needs a better index, while other cases need a rewrite, fewer returned rows, better joins, refreshed statistics, or a broader database optimization review."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="Database Optimization Tool home">
+      <svg aria-hidden="true" class="brand-mark" height="26" viewBox="0 0 64 64" width="26" xmlns="http://www.w3.org/2000/svg">
+        <path class="brand-mark-stroke" d="M32 6 48.5 12.2v14.9c0 10.9-5.8 19-16.5 25.9C21.3 46.1 15.5 38 15.5 27.1V12.2L32 6Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4.8"></path>
+        <ellipse class="brand-mark-stroke" cx="32" cy="21.4" fill="none" rx="10.2" ry="4.6" stroke="currentColor" stroke-width="4.2"></ellipse>
+        <path class="brand-mark-stroke" d="M21.8 21.4v16.2c0 2.6 4.6 4.8 10.2 4.8s10.2-2.2 10.2-4.8V21.4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4.2"></path>
+        <path class="brand-mark-stroke" d="M21.8 37.6c0 2.6 4.6 4.8 10.2 4.8s10.2-2.2 10.2-4.8" fill="none" stroke="currentColor" stroke-width="4.2"></path>
+        <path class="brand-mark-accent" d="M24.8 31h14.4" fill="none" stroke="var(--brand-accent, #087b84)" stroke-linecap="round" stroke-width="5.8"></path>
+      </svg>
+      <span>Database Optimization Tool</span>
+    </a>
+    <nav class="nav" aria-label="Main navigation"><a href="/database-optimization/">Database optimization</a><a href="/query-optimization/">Queries</a><a href="/tools/">Tools</a><a href="/postgresql/">PostgreSQL</a><a class="button-link" href="/">Home</a></nav>
+  </header>
+  <main>
+    <section class="page-hero">
+      <p class="eyebrow">SQL performance tuning</p>
+      <h1>SQL performance tuning starts with workload evidence, not guesswork.</h1>
+      <p class="lede">Good tuning identifies the SQL statements that affect real users, explains why they are expensive, and turns that evidence into safer changes to query shape, indexes, data access, or capacity.</p>
+    </section>
+    <section class="band">
+      <div class="grid">
+        <article class="card"><h3>Find expensive SQL</h3><p>Start with statements that consume high total time, have high average latency, or sit on critical paths such as checkout, booking, reporting, and search.</p></article>
+        <article class="card"><h3>Read execution evidence</h3><p>Use plans, row counts, scan type, join method, sort work, and temporary writes to understand where the database spends time.</p></article>
+        <article class="card"><h3>Reduce work</h3><p>Filter earlier, return fewer columns, avoid repeated lookups, simplify joins, and remove unnecessary sorting before scaling infrastructure.</p></article>
+        <article class="card"><h3>Review indexes</h3><p>Index candidates should match predicates, joins, ordering, and selectivity. A useful index lowers read cost without creating avoidable write overhead.</p></article>
+        <article class="card"><h3>Validate changes</h3><p>Compare before and after plans, staging behavior, lock risk, and production rollout impact before treating a tuning idea as complete.</p></article>
+        <article class="card"><h3>Keep context</h3><p>Tuning one query can move pressure elsewhere. Connect SQL work to broader <a href="/database-optimization/">database optimization</a> evidence.</p></article>
+      </div>
+    </section>
+    <section class="band alt">
+      <div class="section-head">
+        <p class="eyebrow">Tuning workflow</p>
+        <h2>Move from symptom to measured change.</h2>
+      </div>
+      <div class="grid two">
+        <article class="step"><span class="number">01</span><h3>Rank SQL by impact</h3><p>Sort by workload cost, not the single slowest statement. Frequent medium-cost SQL can matter more than rare outliers.</p></article>
+        <article class="step"><span class="number">02</span><h3>Choose the smallest useful fix</h3><p>Pick the change that directly addresses the observed cost: index, rewrite, pagination, batching, statistics, or capacity review.</p></article>
+      </div>
+      <div class="callout"><h2>Need engine-specific evidence later?</h2><p>This page covers broad SQL performance tuning. For PostgreSQL databases, continue to the <a href="/postgresql/">PostgreSQL optimization path</a> or the focused <a href="/postgresql/slow-query-audit/">PostgreSQL slow query audit</a> after the general tuning scope is clear.</p></div>
+    </section>
+  </main>
+  <footer class="site-footer"><strong>Database Optimization Tool</strong><nav class="footer-links"><a href="/">Home</a><a href="/database-optimization/">Database optimization</a><a href="/query-optimization/">Query optimization</a><a href="/tools/">Tools</a></nav></footer>
+</body>
+</html>

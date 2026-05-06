@@ -89,7 +89,7 @@
         <article class="step"><span class="number">3</span><h3>Explain tradeoffs</h3><p>Document why an index, query rewrite, maintenance change, or plan upgrade may help.</p></article>
         <article class="step"><span class="number">4</span><h3>Require review</h3><p>Keep human approval in front of production SQL and configuration changes.</p></article>
       </div>
-      <div class="callout"><h2>Move from broad audit to the right evidence path</h2><p>Start with the <a href="/database-optimization/">database optimization</a> model, then use the PostgreSQL path when the database is PostgreSQL. For query-heavy incidents, go directly to the focused slow query review.</p><p><a class="button-link" href="/postgresql/">PostgreSQL optimization</a> <a class="button-link" href="/postgresql/slow-query-audit/">Slow query audit</a></p></div>
+      <div class="callout"><h2>Move from broad audit to the right evidence path</h2><p>Start with the <a href="/database-optimization/">database optimization</a> model. Use the broader <a href="/database-performance-audit/">database performance audit</a> when symptoms are unclear, <a href="/sql-performance-tuning/">SQL performance tuning</a> when specific statements drive the risk, and <a href="/index-optimization/">index optimization</a> when access paths need review. Then use the PostgreSQL path when the database is PostgreSQL.</p><p><a class="button-link" href="/postgresql/">PostgreSQL optimization</a> <a class="button-link" href="/postgresql/slow-query-audit/">Slow query audit</a></p></div>
     </section>
   </main>
   <footer class="site-footer"><strong>Database Optimization Tool</strong><nav class="footer-links"><a href="/">Home</a><a href="/query-optimization/">Query optimization</a></nav></footer>

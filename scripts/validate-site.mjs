@@ -7,6 +7,9 @@ const required = [
   "postgresql/index.html",
   "database-optimization/index.html",
   "database-optimization-audit/index.html",
+  "database-performance-audit/index.html",
+  "sql-performance-tuning/index.html",
+  "index-optimization/index.html",
   "query-optimization/index.html",
   "tools/index.html",
   "mysql/index.html",
@@ -41,6 +44,18 @@ for (const file of htmlFiles) {
   for (const token of ["<title>", "meta name=\"description\"", "canonical", "<h1"]) {
     if (!source.includes(token)) throw new Error(`${file} missing ${token}`);
   }
+}
+
+const sitemap = readFileSync(join(root, "sitemap.xml"), "utf8");
+const llms = readFileSync(join(root, "llms.txt"), "utf8");
+for (const path of [
+  "/database-performance-audit/",
+  "/sql-performance-tuning/",
+  "/index-optimization/"
+]) {
+  const url = `https://databaseoptimizationtool.com${path}`;
+  if (!sitemap.includes(`<loc>${url}</loc>`)) throw new Error(`sitemap.xml missing ${url}`);
+  if (!llms.includes(url)) throw new Error(`llms.txt missing ${url}`);
 }
 
 console.log(`Validated ${htmlFiles.length} HTML pages.`);
