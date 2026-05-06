@@ -1,5 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="8" fill="#e6f1dc"/>
-  <rect x="10" y="10" width="44" height="44" rx="4" fill="none" stroke="#17211c" stroke-width="4"/>
-  <text x="32" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="800" fill="#13543e">DB</text>
+  <rect width="64" height="64" rx="12" fill="#f7f9fb"/>
+  <path d="M32 6 48.5 12.2v14.9c0 10.9-5.8 19-16.5 25.9C21.3 46.1 15.5 38 15.5 27.1V12.2L32 6Z" fill="none" stroke="#172027" stroke-linecap="round" stroke-linejoin="round" stroke-width="4.8"/>
+  <ellipse cx="32" cy="21.4" fill="none" rx="10.2" ry="4.6" stroke="#172027" stroke-width="4.2"/>
+  <path d="M21.8 21.4v16.2c0 2.6 4.6 4.8 10.2 4.8s10.2-2.2 10.2-4.8V21.4" fill="none" stroke="#172027" stroke-linecap="round" stroke-linejoin="round" stroke-width="4.2"/>
+  <path d="M21.8 37.6c0 2.6 4.6 4.8 10.2 4.8s10.2-2.2 10.2-4.8" fill="none" stroke="#172027" stroke-width="4.2"/>
+  <path d="M24.8 31h14.4" fill="none" stroke="#087b84" stroke-linecap="round" stroke-width="5.8"/>
 </svg>

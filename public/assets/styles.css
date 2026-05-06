@@ -9,6 +9,7 @@
   --line-strong: #aebbc5;
   --teal: #087b84;
   --teal-dark: #07545c;
+  --brand-accent: #087b84;
   --green: #159447;
   --green-soft: rgba(21, 148, 71, 0.1);
   --amber: #c27408;
@@ -176,15 +177,16 @@ main,
 }
 
 .brand-mark {
-  display: grid;
-  width: 36px;
-  height: 36px;
-  place-items: center;
-  border: 2px solid var(--teal-dark);
-  background: var(--surface);
-  color: var(--teal);
-  font-family: var(--mono);
-  font-weight: 900;
+  flex: 0 0 auto;
+  color: var(--ink);
+}
+
+.brand-mark-stroke {
+  stroke: currentColor;
+}
+
+.brand-mark-accent {
+  stroke: var(--brand-accent);
 }
 
 .nav {
@@ -264,7 +266,7 @@ main,
 
 .eyebrow {
   display: inline-flex;
-  width: fit-content;
+  max-width: 100%;
   align-items: center;
   gap: 8px;
   margin: 0 0 22px;
@@ -275,6 +277,7 @@ main,
   font-family: var(--mono);
   font-size: 0.78rem;
   font-weight: 900;
+  text-align: center;
 }
 
 h1,
@@ -360,6 +363,7 @@ h3 {
 .tool-preview {
   position: relative;
   overflow: hidden;
+  width: 100%;
   max-width: 940px;
   margin: 26px auto 0;
   border: 1px solid var(--line-strong);
@@ -442,8 +446,13 @@ h3 {
   display: grid;
   grid-template-columns: 86px 1fr;
   gap: 14px;
+  min-width: 0;
   padding: 12px 0;
   border-bottom: 1px solid var(--line);
+}
+
+.finding div {
+  min-width: 0;
 }
 
 .finding:last-child {
@@ -549,22 +558,44 @@ h3 {
 }
 
 .band {
-  padding: clamp(58px, 8vw, 108px) clamp(18px, 5vw, 72px);
+  position: relative;
+  overflow: hidden;
+  padding: clamp(60px, 8vw, 104px) 28px;
   border-top: 1px solid var(--line);
   background: rgba(247, 249, 251, 0.68);
 }
 
+.band::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: min(1120px, calc(100% - 56px));
+  height: 1px;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, transparent, rgba(8, 123, 132, 0.28), rgba(21, 148, 71, 0.18), transparent);
+}
+
 .band.alt {
-  background: rgba(238, 243, 246, 0.78);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.58), rgba(238, 243, 246, 0.78)),
+    rgba(238, 243, 246, 0.78);
 }
 
 .section-head {
-  max-width: 920px;
-  margin-bottom: 36px;
+  max-width: 760px;
+  margin: 0 auto 32px;
+  text-align: center;
+}
+
+.section-head h2 {
+  font-size: clamp(2rem, 3.7vw, 3.25rem);
+  line-height: 1.08;
 }
 
 .section-head p {
-  margin: 14px 0 0;
+  max-width: 720px;
+  margin: 14px auto 0;
   color: var(--muted);
   font-size: 1.1rem;
   line-height: 1.65;
@@ -574,6 +605,8 @@ h3 {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
+  max-width: 1040px;
+  margin: 0 auto;
 }
 
 .grid.two {
@@ -588,6 +621,7 @@ h3 {
   overflow: hidden;
   padding: 24px;
   border: 1px solid var(--line);
+  border-radius: 8px;
   background: rgba(255, 255, 255, 0.88);
   box-shadow: 0 10px 30px rgba(23, 32, 39, 0.06);
   transition: transform 0.24s ease, border-color 0.24s ease, box-shadow 0.24s ease;
@@ -666,8 +700,11 @@ h3 {
 
 .comparison {
   width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
   overflow: hidden;
   border: 1px solid var(--line);
+  border-radius: 8px;
   border-collapse: collapse;
   background: rgba(255, 255, 255, 0.9);
   box-shadow: 0 10px 30px rgba(23, 32, 39, 0.06);
@@ -697,11 +734,14 @@ h3 {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .faq article {
   padding: 22px;
   border: 1px solid var(--line);
+  border-radius: 8px;
   background: rgba(255, 255, 255, 0.9);
 }
 
@@ -798,6 +838,18 @@ h3 {
 
   .hero {
     min-height: auto;
+    max-width: 820px;
+  }
+
+  h1 {
+    max-width: 700px;
+    font-size: clamp(2.7rem, 6.8vw, 4rem);
+  }
+
+  .tool-preview,
+  .context-ribbon,
+  .signal-strip {
+    max-width: 760px;
   }
 
   .footer-links {
@@ -814,6 +866,39 @@ h3 {
     grid-template-columns: 1fr;
   }
 
+  .hero {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .eyebrow {
+    justify-content: center;
+  }
+
+  .preview-top {
+    padding: 13px 14px;
+  }
+
+  .preview-top span {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .preview-body {
+    padding: 12px 14px;
+  }
+
+  .context-ribbon,
+  .signal-strip {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+
+  .band {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+
   .comparison {
     display: block;
     overflow-x: auto;
@@ -825,6 +910,7 @@ h3 {
   }
 
   h1 {
-    font-size: 3.4rem;
+    font-size: clamp(2.55rem, 12vw, 3rem);
+    overflow-wrap: anywhere;
   }
 }
