@@ -38,7 +38,7 @@ Use `Database Optimization Tool` as the brand and product category. Use `read-on
 
 ## Measurement
 
-当前只接入 event-ready skeleton：关键 CTA 带 `data-measure` 标记，`/assets/conversion-events.js` 只在 `window.gtag` 已存在时发送事件，不包含 GA loader 或 GTM。
+当前已接入真实 GA4 loader：`/assets/ga4.js` 固定使用 Measurement ID `G-5DT182Z27J`，初始化 `window.dataLayer` 和 `window.gtag`。关键 CTA 继续带 `data-measure` 标记，`/assets/conversion-events.js` 继续只在 `window.gtag` 已存在时发送事件，本身不包含 GA loader 或 GTM。
 
 ## Non-Goals
 

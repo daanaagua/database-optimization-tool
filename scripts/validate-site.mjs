@@ -2,6 +2,8 @@ import { readFileSync, readdirSync, statSync } from "node:fs";
 import { join } from "node:path";
 
 const root = new URL("../public/", import.meta.url).pathname;
+const ga4Path = "assets/ga4.js";
+const ga4MeasurementId = "G-5DT182Z27J";
 const required = [
   "index.html",
   "postgresql/index.html",
@@ -25,6 +27,7 @@ const required = [
   "llms.txt",
   "favicon.svg",
   "assets/styles.css",
+  ga4Path,
   "assets/conversion-events.js"
 ];
 
@@ -51,10 +54,38 @@ function walk(dir) {
 }
 walk(root);
 
+if (htmlFiles.length !== 20) {
+  throw new Error(`Expected 20 HTML pages, found ${htmlFiles.length}`);
+}
+
+const ga4File = join(root, ga4Path);
+const ga4Source = readFileSync(ga4File, "utf8");
+if (!ga4Source.includes(ga4MeasurementId)) {
+  throw new Error(`${ga4Path} missing Measurement ID ${ga4MeasurementId}`);
+}
+const requiredGa4Snippets = [
+  ["window.dataLayer initialization", "window.dataLayer = window.dataLayer || []"],
+  ["window.gtag initialization", "window.gtag = function"],
+  ["Google tag loader URL", "googletagmanager.com/gtag/js"]
+];
+for (const [label, snippet] of requiredGa4Snippets) {
+  if (!ga4Source.includes(snippet)) {
+    throw new Error(`${ga4Path} missing ${label}`);
+  }
+}
+
 for (const file of htmlFiles) {
   const source = readFileSync(file, "utf8");
   for (const token of ["<title>", "meta name=\"description\"", "canonical", "<h1"]) {
     if (!source.includes(token)) throw new Error(`${file} missing ${token}`);
+  }
+  if (!source.includes("/assets/ga4.js")) {
+    throw new Error(`${file} missing /assets/ga4.js`);
+  }
+  const ga4Index = source.indexOf("/assets/ga4.js");
+  const conversionIndex = source.indexOf("/assets/conversion-events.js");
+  if (conversionIndex !== -1 && ga4Index > conversionIndex) {
+    throw new Error(`${file} loads ga4.js after conversion-events.js`);
   }
 }
 
@@ -157,7 +188,7 @@ for (const anchor of requestPostgresLinks) {
 for (const file of siteFiles) {
   const source = readFileSync(file, "utf8");
   for (const token of ["googletagmanager", "gtag/js"]) {
-    if (source.includes(token)) {
+    if (file !== ga4File && source.includes(token)) {
       throw new Error(`${file} includes forbidden GA/GTM loader token ${token}`);
     }
   }
