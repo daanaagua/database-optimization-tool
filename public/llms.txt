@@ -4,7 +4,7 @@ Database Optimization Tool helps small businesses, local shops, and small softwa
 
 Current support:
 
-- PostgreSQL: available now through a read-only audit workflow.
+- PostgreSQL: available now through a read-only audit workflow with a local collector path, no production writes, sample report guidance, and specialist escalation for hosted account, pricing, and transaction workflows.
 - MySQL: planned.
 - SQL Server: planned.
 
@@ -12,6 +12,9 @@ Important pages:
 
 - https://databaseoptimizationtool.com/
 - https://databaseoptimizationtool.com/postgresql/
+- https://databaseoptimizationtool.com/postgresql/collector/
+- https://databaseoptimizationtool.com/postgresql/sample-report/
+- https://databaseoptimizationtool.com/postgresql/slow-query-audit/
 - https://databaseoptimizationtool.com/database-optimization/
 - https://databaseoptimizationtool.com/database-optimization-audit/
 - https://databaseoptimizationtool.com/query-optimization/

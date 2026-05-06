@@ -3,40 +3,344 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>PostgreSQL Database Optimization Tool</title>
-  <meta name="description" content="Start database optimization with a read-only PostgreSQL audit for slow queries, missing indexes, bloat signals, and safe next steps.">
+  <title>PostgreSQL Audit and Optimization Hub</title>
+  <meta name="description" content="PostgreSQL database optimization hub for read-only collector setup, audit scope, sample reports, slow query review, and specialist next steps.">
   <link rel="canonical" href="https://databaseoptimizationtool.com/postgresql/">
+  <meta property="og:title" content="PostgreSQL Audit and Optimization Hub">
+  <meta property="og:description" content="Read-only PostgreSQL optimization path for collector setup, audit scope, sample reports, and specialist next steps.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://databaseoptimizationtool.com/postgresql/">
+  <meta property="og:site_name" content="Database Optimization Tool">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="PostgreSQL Audit and Optimization Hub">
+  <meta name="twitter:description" content="Start PostgreSQL optimization with read-only evidence, local collection, and reviewable report scope.">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/assets/styles.css">
+  <style>
+    @media (max-width: 700px) {
+      .site-header {
+        gap: 12px;
+      }
+
+      .brand,
+      .brand span {
+        min-width: 0;
+        max-width: 100%;
+      }
+
+      .brand span,
+      h1,
+      h2,
+      h3,
+      p,
+      a {
+        overflow-wrap: anywhere;
+      }
+
+      .nav {
+        flex-wrap: wrap;
+        gap: 10px;
+        overflow-x: visible;
+        padding-bottom: 0;
+        scroll-padding: 0 18px;
+      }
+
+      .nav a {
+        flex: 0 1 auto;
+      }
+
+      .nav .button-link {
+        width: auto;
+        min-height: 36px;
+        padding: 8px 12px;
+      }
+
+      .hero,
+      .page-hero {
+        padding-right: clamp(16px, 5vw, 24px);
+        padding-left: clamp(16px, 5vw, 24px);
+      }
+
+      .page-hero {
+        padding-top: clamp(56px, 16vw, 86px);
+        padding-bottom: clamp(42px, 12vw, 62px);
+      }
+
+      h1 {
+        font-size: clamp(2.2rem, 10.4vw, 3rem);
+        line-height: 1.06;
+        text-wrap: balance;
+      }
+
+      h2,
+      .section-head h2,
+      .callout h2 {
+        font-size: clamp(1.72rem, 7.8vw, 2.35rem);
+        line-height: 1.12;
+        text-wrap: balance;
+      }
+
+      .lede,
+      .section-head p {
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+
+      .actions {
+        gap: 10px;
+        margin-top: 22px;
+      }
+
+      .button-link,
+      .secondary-link {
+        min-width: 0;
+        max-width: 100%;
+        min-height: 44px;
+        padding: 10px 14px;
+        line-height: 1.18;
+        text-align: center;
+        white-space: normal;
+      }
+
+      .grid {
+        gap: 14px;
+      }
+
+      .card,
+      .step,
+      .engine,
+      .callout {
+        padding: 20px;
+      }
+
+      .tool-preview {
+        max-width: 100%;
+        margin-top: 22px;
+      }
+
+      .preview-top {
+        align-items: flex-start;
+        gap: 8px;
+      }
+
+      .preview-top .traffic-lights {
+        flex: 0 0 auto;
+        padding-top: 3px;
+      }
+
+      .preview-top span:not(.traffic-lights):not(.preview-dot) {
+        line-height: 1.25;
+      }
+
+      .preview-dot {
+        flex: 0 0 auto;
+        margin-top: 4px;
+        margin-left: 4px;
+      }
+
+      .finding {
+        gap: 8px;
+      }
+
+      .severity {
+        max-width: 100%;
+      }
+
+      .status-row {
+        gap: 8px;
+      }
+
+      .pill {
+        justify-content: center;
+        line-height: 1.25;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .hero {
+        padding-top: 38px;
+        padding-bottom: 34px;
+      }
+
+      .page-hero {
+        padding-top: 48px;
+      }
+
+      h1 {
+        font-size: clamp(1.95rem, 8.6vw, 2.25rem);
+        line-height: 1.1;
+      }
+
+      h2,
+      .section-head h2,
+      .callout h2 {
+        font-size: clamp(1.55rem, 7vw, 2rem);
+        line-height: 1.15;
+      }
+
+      .eyebrow {
+        width: 100%;
+        justify-content: center;
+        line-height: 1.25;
+        white-space: normal;
+      }
+
+      .actions {
+        width: 100%;
+      }
+
+      .actions .button-link,
+      .actions .secondary-link {
+        font-size: 0.96rem;
+      }
+
+      .status-row {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .pill {
+        width: 100%;
+      }
+
+      .preview-body {
+        padding: 10px 12px;
+      }
+
+      .finding {
+        padding: 10px 0;
+      }
+
+      .section-head {
+        margin-bottom: 24px;
+      }
+
+      .band {
+        padding-top: 48px;
+        padding-bottom: 56px;
+      }
+
+      .card,
+      .step,
+      .engine,
+      .callout {
+        padding: 18px;
+      }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "PostgreSQL Audit and Optimization Hub",
+        "url": "https://databaseoptimizationtool.com/postgresql/",
+        "description": "PostgreSQL database optimization hub for read-only collector setup, audit scope, sample reports, slow query review, and specialist next steps.",
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "Database Optimization Tool",
+          "url": "https://databaseoptimizationtool.com/"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://databaseoptimizationtool.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "PostgreSQL",
+            "item": "https://databaseoptimizationtool.com/postgresql/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Does the PostgreSQL path make production writes?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. The route describes a read-only, local collector model for evidence gathering. Production writes, migrations, index creation, and automatic tuning changes stay out of scope."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Where do account, pricing, and transaction workflows belong?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Those workflows remain on the dedicated PostgreSQL specialist property. This category site explains the safe optimization route and when to escalate."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <header class="site-header">
-    <a class="brand" href="/"><span class="brand-mark">DB</span><span>Database Optimization Tool</span></a>
-    <nav class="nav" aria-label="Main navigation">
-      <a href="/database-optimization/">Database optimization</a>
-      <a href="/query-optimization/">Queries</a>
-      <a href="/tools/">Tools</a>
-      <a class="button-link" href="/">Home</a>
-    </nav>
+    <a class="brand" href="/" aria-label="Database Optimization Tool home">
+      <svg aria-hidden="true" class="brand-mark" height="26" viewBox="0 0 64 64" width="26" xmlns="http://www.w3.org/2000/svg">
+        <path class="brand-mark-stroke" d="M32 6 48.5 12.2v14.9c0 10.9-5.8 19-16.5 25.9C21.3 46.1 15.5 38 15.5 27.1V12.2L32 6Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4.8"></path>
+        <ellipse class="brand-mark-stroke" cx="32" cy="21.4" fill="none" rx="10.2" ry="4.6" stroke="currentColor" stroke-width="4.2"></ellipse>
+        <path class="brand-mark-stroke" d="M21.8 21.4v16.2c0 2.6 4.6 4.8 10.2 4.8s10.2-2.2 10.2-4.8V21.4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4.2"></path>
+        <path class="brand-mark-stroke" d="M21.8 37.6c0 2.6 4.6 4.8 10.2 4.8s10.2-2.2 10.2-4.8" fill="none" stroke="currentColor" stroke-width="4.2"></path>
+        <path class="brand-mark-accent" d="M24.8 31h14.4" fill="none" stroke="var(--brand-accent, #087b84)" stroke-linecap="round" stroke-width="5.8"></path>
+      </svg>
+      <span>Database Optimization Tool</span>
+    </a>
+    <nav class="nav" aria-label="Main navigation"><a href="/database-optimization/">Database optimization</a><a href="/database-optimization-audit/">Audit</a><a href="/tools/">Tools</a><a class="button-link" href="/">Home</a></nav>
   </header>
   <main>
     <section class="page-hero">
-      <p class="eyebrow">Available now</p>
-      <h1>PostgreSQL database optimization without production guesswork.</h1>
-      <p class="lede">Use a read-only audit workflow to identify slow query pressure, missing index candidates, unused indexes, table health risks, temp writes, and autovacuum drift.</p>
+      <p class="eyebrow">PostgreSQL primary path</p>
+      <h1>PostgreSQL database optimization starts with read-only evidence.</h1>
+      <p class="lede">This hub routes PostgreSQL teams through a local collector model, defined audit scope, sample report expectations, and specialist escalation when account, pricing, or transaction work belongs on the dedicated PostgreSQL service.</p>
+      <div class="actions">
+        <a class="button-link" href="/postgresql/collector/">Review collector path</a>
+        <a class="secondary-link" href="/postgresql/sample-report/">View sample report scope</a>
+      </div>
     </section>
+
     <section class="band">
+      <div class="section-head">
+        <h2>A category site should explain the safe path before sending teams to a specialist.</h2>
+        <p>PostgreSQL is the supported engine here. MySQL and SQL Server stay roadmap surfaces until they have their own collector and evidence model.</p>
+      </div>
       <div class="grid">
-        <article class="card"><h3>Slow query evidence</h3><p>Rank query pressure by total time, mean time, disk reads, temp writes, and call volume.</p></article>
-        <article class="card"><h3>Index review</h3><p>Surface likely index opportunities and unused index candidates while keeping creation decisions manual.</p></article>
-        <article class="card"><h3>Table health</h3><p>Review bloat signals, dead tuples, table sizes, and maintenance timestamps before tuning production.</p></article>
+        <article class="card"><h3>Read-only by default</h3><p>The collector path is local and evidence-focused. It does not run migrations, create indexes, rewrite data, or make production writes.</p><a href="/postgresql/collector/">Collector setup</a></article>
+        <article class="card"><h3>Defined audit scope</h3><p>Findings center on slow query pressure, index candidates, unused index signals, table health, bloat risk, autovacuum drift, temp writes, and role review.</p><a href="/postgresql/slow-query-audit/">Slow query audit</a></article>
+        <article class="card"><h3>Report before action</h3><p>The output should be a prioritized review document with evidence, risk notes, and change suggestions that still require human approval.</p><a href="/postgresql/sample-report/">Sample report</a></article>
+      </div>
+    </section>
+
+    <section class="band alt">
+      <div class="section-head">
+        <h2>What the PostgreSQL route covers.</h2>
+        <p>The route is built for teams that need a first audit, launch readiness check, or tuning pass without granting broad production control.</p>
+      </div>
+      <div class="grid two">
+        <article class="step"><span class="number">1</span><h3>Prepare access</h3><p>Use a temporary least-privilege PostgreSQL role where possible. Avoid permanent credentials and avoid superuser access unless a safer path is impossible.</p></article>
+        <article class="step"><span class="number">2</span><h3>Run local collection</h3><p>Collect catalog and statistics evidence from the environment you control. The category site does not host billing, uploads, or account flows.</p></article>
+        <article class="step"><span class="number">3</span><h3>Review findings</h3><p>Prioritize hot paths first: expensive statements, missing index candidates, severe bloat, vacuum health, high temp writes, and configuration risk.</p></article>
+        <article class="step"><span class="number">4</span><h3>Escalate carefully</h3><p>Use the specialist PostgreSQL service when you need the hosted workflow, account handling, pricing, or transaction support.</p></article>
       </div>
       <div class="callout">
-        <h2>Why PostgreSQL first?</h2>
-        <p>PostgreSQL gives small teams strong performance visibility through system catalogs and extensions such as pg_stat_statements. That makes it the best first engine for an evidence-backed database optimization tool.</p>
+        <h2>Need the specialist workflow?</h2>
+        <p>This site explains the PostgreSQL optimization category and safe audit path. Account, pricing, transaction, and dedicated PostgreSQL service workflows remain on the specialist property.</p>
+        <p><a class="button-link" href="https://postgresaudit.com/">Open PostgreSQL specialist site</a></p>
       </div>
     </section>
   </main>
-  <footer class="site-footer"><strong>Database Optimization Tool</strong><nav class="footer-links"><a href="/">Home</a><a href="/mysql/">MySQL roadmap</a><a href="/sql-server/">SQL Server roadmap</a></nav></footer>
+  <footer class="site-footer"><strong>Database Optimization Tool</strong><nav class="footer-links"><a href="/">Home</a><a href="/postgresql/collector/">Collector</a><a href="/postgresql/sample-report/">Sample report</a><a href="/mysql/">MySQL roadmap</a><a href="/sql-server/">SQL Server roadmap</a></nav></footer>
 </body>
 </html>

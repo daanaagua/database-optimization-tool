@@ -6,19 +6,81 @@
   <title>Database Optimization Audit</title>
   <meta name="description" content="A database optimization audit turns database evidence into prioritized findings, risk notes, and safe next steps before production changes.">
   <link rel="canonical" href="https://databaseoptimizationtool.com/database-optimization-audit/">
+  <meta property="og:title" content="Database Optimization Audit">
+  <meta property="og:description" content="Turn PostgreSQL evidence into prioritized audit findings, risk notes, and safe next steps before production changes.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://databaseoptimizationtool.com/database-optimization-audit/">
+  <meta property="og:site_name" content="Database Optimization Tool">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Database Optimization Audit">
+  <meta name="twitter:description" content="A PostgreSQL-first audit path for slow queries, index evidence, table health risk, and human-reviewed next steps.">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/assets/styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://databaseoptimizationtool.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Database Optimization Audit",
+            "item": "https://databaseoptimizationtool.com/database-optimization-audit/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What does a database optimization audit review first?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It starts with database evidence such as query patterns, table size, index usage, and risk notes so the next step can be reviewed before production changes."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which database audit path is available now?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The current executable path is PostgreSQL. Other SQL engines are roadmap surfaces and are not claimed as supported collectors today."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <header class="site-header">
-    <a class="brand" href="/"><span class="brand-mark">DB</span><span>Database Optimization Tool</span></a>
+    <a class="brand" href="/" aria-label="Database Optimization Tool home">
+      <svg aria-hidden="true" class="brand-mark" height="26" viewBox="0 0 64 64" width="26" xmlns="http://www.w3.org/2000/svg">
+        <path class="brand-mark-stroke" d="M32 6 48.5 12.2v14.9c0 10.9-5.8 19-16.5 25.9C21.3 46.1 15.5 38 15.5 27.1V12.2L32 6Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4.8"></path>
+        <ellipse class="brand-mark-stroke" cx="32" cy="21.4" fill="none" rx="10.2" ry="4.6" stroke="currentColor" stroke-width="4.2"></ellipse>
+        <path class="brand-mark-stroke" d="M21.8 21.4v16.2c0 2.6 4.6 4.8 10.2 4.8s10.2-2.2 10.2-4.8V21.4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4.2"></path>
+        <path class="brand-mark-stroke" d="M21.8 37.6c0 2.6 4.6 4.8 10.2 4.8s10.2-2.2 10.2-4.8" fill="none" stroke="currentColor" stroke-width="4.2"></path>
+        <path class="brand-mark-accent" d="M24.8 31h14.4" fill="none" stroke="var(--brand-accent, #087b84)" stroke-linecap="round" stroke-width="5.8"></path>
+      </svg>
+      <span>Database Optimization Tool</span>
+    </a>
     <nav class="nav" aria-label="Main navigation"><a href="/database-optimization/">Database optimization</a><a href="/postgresql/">PostgreSQL</a><a href="/tools/">Tools</a><a class="button-link" href="/">Home</a></nav>
   </header>
   <main>
     <section class="page-hero">
       <p class="eyebrow">Audit intent</p>
       <h1>A database optimization audit should explain what is slow and what evidence supports the next step.</h1>
-      <p class="lede">The audit format is useful for small businesses because it turns a vague performance complaint into a reviewable work plan.</p>
+      <p class="lede">The current executable path is PostgreSQL: use it to turn a vague performance complaint into a reviewable work plan backed by query, index, and table evidence.</p>
     </section>
     <section class="band">
       <div class="grid two">
@@ -27,6 +89,7 @@
         <article class="step"><span class="number">3</span><h3>Explain tradeoffs</h3><p>Document why an index, query rewrite, maintenance change, or plan upgrade may help.</p></article>
         <article class="step"><span class="number">4</span><h3>Require review</h3><p>Keep human approval in front of production SQL and configuration changes.</p></article>
       </div>
+      <div class="callout"><h2>Start with PostgreSQL</h2><p>Use the PostgreSQL workflow today for read-only evidence collection and audit review. MySQL and SQL Server remain roadmap surfaces.</p><p><a class="button-link" href="/postgresql/">Review PostgreSQL evidence</a></p></div>
     </section>
   </main>
   <footer class="site-footer"><strong>Database Optimization Tool</strong><nav class="footer-links"><a href="/">Home</a><a href="/query-optimization/">Query optimization</a></nav></footer>

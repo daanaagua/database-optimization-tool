@@ -6,19 +6,81 @@
   <title>Query Optimization for Small Teams</title>
   <meta name="description" content="Query optimization helps small teams find expensive SQL, reduce slow paths, and review index candidates with evidence.">
   <link rel="canonical" href="https://databaseoptimizationtool.com/query-optimization/">
+  <meta property="og:title" content="Query Optimization for Small Teams">
+  <meta property="og:description" content="Find PostgreSQL queries that put pressure on real business workflows, then review indexes and rewrites with evidence.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://databaseoptimizationtool.com/query-optimization/">
+  <meta property="og:site_name" content="Database Optimization Tool">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Query Optimization for Small Teams">
+  <meta name="twitter:description" content="A PostgreSQL-first query optimization guide for expensive SQL, slow paths, temp writes, and index review.">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/assets/styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://databaseoptimizationtool.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Query Optimization",
+            "item": "https://databaseoptimizationtool.com/query-optimization/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is the first step in query optimization?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Start by finding SQL with real business impact, then review evidence such as total time, mean time, temporary writes, indexes, and execution plans."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which query optimization workflow is available now?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The current workflow is PostgreSQL-first. It focuses on read-only evidence and reviewable recommendations before any production database change."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <header class="site-header">
-    <a class="brand" href="/"><span class="brand-mark">DB</span><span>Database Optimization Tool</span></a>
+    <a class="brand" href="/" aria-label="Database Optimization Tool home">
+      <svg aria-hidden="true" class="brand-mark" height="26" viewBox="0 0 64 64" width="26" xmlns="http://www.w3.org/2000/svg">
+        <path class="brand-mark-stroke" d="M32 6 48.5 12.2v14.9c0 10.9-5.8 19-16.5 25.9C21.3 46.1 15.5 38 15.5 27.1V12.2L32 6Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4.8"></path>
+        <ellipse class="brand-mark-stroke" cx="32" cy="21.4" fill="none" rx="10.2" ry="4.6" stroke="currentColor" stroke-width="4.2"></ellipse>
+        <path class="brand-mark-stroke" d="M21.8 21.4v16.2c0 2.6 4.6 4.8 10.2 4.8s10.2-2.2 10.2-4.8V21.4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4.2"></path>
+        <path class="brand-mark-stroke" d="M21.8 37.6c0 2.6 4.6 4.8 10.2 4.8s10.2-2.2 10.2-4.8" fill="none" stroke="currentColor" stroke-width="4.2"></path>
+        <path class="brand-mark-accent" d="M24.8 31h14.4" fill="none" stroke="var(--brand-accent, #087b84)" stroke-linecap="round" stroke-width="5.8"></path>
+      </svg>
+      <span>Database Optimization Tool</span>
+    </a>
     <nav class="nav" aria-label="Main navigation"><a href="/database-optimization/">Database optimization</a><a href="/postgresql/">PostgreSQL</a><a href="/tools/">Tools</a><a class="button-link" href="/">Home</a></nav>
   </header>
   <main>
     <section class="page-hero">
       <p class="eyebrow">Query path</p>
       <h1>Query optimization starts by finding the SQL that affects real work.</h1>
-      <p class="lede">A small business does not need every database theory term on day one. It needs to know which checkout, booking, inventory, or report path is putting pressure on the database.</p>
+      <p class="lede">A small business does not need every database theory term on day one. The PostgreSQL path available now helps identify which checkout, booking, inventory, or report query is putting pressure on the database.</p>
     </section>
     <section class="band">
       <div class="grid">
@@ -26,6 +88,7 @@
         <article class="card"><h3>Mean time</h3><p>High mean time points to heavy individual queries that may block important workflows.</p></article>
         <article class="card"><h3>Temp writes</h3><p>Temp files can signal sort or join pressure that deserves EXPLAIN review.</p></article>
       </div>
+      <div class="callout"><h2>Use the PostgreSQL workflow</h2><p>Review query pressure through the current PostgreSQL audit path before planning index changes, rewrites, or infrastructure upgrades.</p><p><a class="button-link" href="/postgresql/">Review PostgreSQL evidence</a></p></div>
     </section>
   </main>
   <footer class="site-footer"><strong>Database Optimization Tool</strong><nav class="footer-links"><a href="/">Home</a><a href="/database-optimization-audit/">Audit</a></nav></footer>

@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PostgreSQL Optimization Sample Report</title>
+  <meta name="description" content="Sample PostgreSQL optimization report scope showing slow query evidence, index review, table health, security posture, and safe next steps.">
+  <link rel="canonical" href="https://databaseoptimizationtool.com/postgresql/sample-report/">
+  <meta property="og:title" content="PostgreSQL Optimization Sample Report">
+  <meta property="og:description" content="Sample PostgreSQL report scope for slow query evidence, index review, table health, access review, and safe next steps.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://databaseoptimizationtool.com/postgresql/sample-report/">
+  <meta property="og:site_name" content="Database Optimization Tool">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="PostgreSQL Optimization Sample Report">
+  <meta name="twitter:description" content="Set expectations for PostgreSQL audit reports before production changes are planned.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <style>
+    @media (max-width: 560px) {
+      .nav {
+        flex-wrap: wrap;
+        gap: 10px;
+        overflow-x: visible;
+        padding-bottom: 0;
+      }
+
+      .nav a {
+        flex: 0 1 auto;
+      }
+
+      .nav .button-link {
+        width: auto;
+        min-height: 36px;
+        padding: 8px 12px;
+      }
+
+      .button-link,
+      .secondary-link {
+        min-width: 0;
+        max-width: 100%;
+        line-height: 1.18;
+        text-align: center;
+        white-space: normal;
+      }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "PostgreSQL Optimization Sample Report",
+        "url": "https://databaseoptimizationtool.com/postgresql/sample-report/",
+        "description": "Sample PostgreSQL optimization report scope showing slow query evidence, index review, table health, security posture, and safe next steps.",
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "Database Optimization Tool",
+          "url": "https://databaseoptimizationtool.com/"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://databaseoptimizationtool.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "PostgreSQL",
+            "item": "https://databaseoptimizationtool.com/postgresql/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Sample report",
+            "item": "https://databaseoptimizationtool.com/postgresql/sample-report/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What should a PostgreSQL optimization report include?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It should include an executive summary, slow query evidence, index review, table health, access review, and prioritized next steps."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does a sample report replace human review?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. The report model separates evidence, risk, and action so a developer, DBA, or specialist can review changes before production rollout."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="Database Optimization Tool home">
+      <svg aria-hidden="true" class="brand-mark" height="26" viewBox="0 0 64 64" width="26" xmlns="http://www.w3.org/2000/svg">
+        <path class="brand-mark-stroke" d="M32 6 48.5 12.2v14.9c0 10.9-5.8 19-16.5 25.9C21.3 46.1 15.5 38 15.5 27.1V12.2L32 6Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4.8"></path>
+        <ellipse class="brand-mark-stroke" cx="32" cy="21.4" fill="none" rx="10.2" ry="4.6" stroke="currentColor" stroke-width="4.2"></ellipse>
+        <path class="brand-mark-stroke" d="M21.8 21.4v16.2c0 2.6 4.6 4.8 10.2 4.8s10.2-2.2 10.2-4.8V21.4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4.2"></path>
+        <path class="brand-mark-stroke" d="M21.8 37.6c0 2.6 4.6 4.8 10.2 4.8s10.2-2.2 10.2-4.8" fill="none" stroke="currentColor" stroke-width="4.2"></path>
+        <path class="brand-mark-accent" d="M24.8 31h14.4" fill="none" stroke="var(--brand-accent, #087b84)" stroke-linecap="round" stroke-width="5.8"></path>
+      </svg>
+      <span>Database Optimization Tool</span>
+    </a>
+    <nav class="nav" aria-label="Main navigation"><a href="/postgresql/">PostgreSQL</a><a href="/postgresql/collector/">Collector</a><a href="/database-optimization-audit/">Audit</a><a class="button-link" href="/">Home</a></nav>
+  </header>
+  <main>
+    <section class="page-hero">
+      <p class="eyebrow">Report model</p>
+      <h1>A PostgreSQL optimization report should separate evidence, risk, and action.</h1>
+      <p class="lede">Use a sample report model to set expectations before a collector run: what signals are reviewed, what the report should explain, and what still requires human approval.</p>
+    </section>
+
+    <section class="band">
+      <div class="section-head">
+        <h2>Expected report sections.</h2>
+        <p>A good audit report makes the next decision easier without pretending that SQL changes are automatic or risk-free.</p>
+      </div>
+      <div class="grid">
+        <article class="card"><h3>Executive summary</h3><p>Plain-language priority list for the business workflow affected by database pressure.</p></article>
+        <article class="card"><h3>Slow query evidence</h3><p>Ranked statements by total time, mean time, calls, disk reads, temp writes, and visible business path.</p></article>
+        <article class="card"><h3>Index review</h3><p>Missing index candidates, unused index signals, duplicate-looking indexes, and cautions before creation or removal.</p></article>
+        <article class="card"><h3>Table health</h3><p>Relation size, dead tuple signals, bloat risk, vacuum and analyze timestamps, and growth patterns.</p></article>
+        <article class="card"><h3>Access review</h3><p>Audit role posture, overly broad access signals, extension assumptions, and credential removal reminders.</p></article>
+        <article class="card"><h3>Next steps</h3><p>Review order, staging checks, EXPLAIN work, rollout risk, rollback notes, and owner assignment.</p></article>
+      </div>
+    </section>
+
+    <section class="band alt">
+      <div class="callout">
+        <h2>Sample report boundary</h2>
+        <p>This category site describes what a PostgreSQL optimization report should contain. Hosted report generation, account flows, pricing, and transaction details stay with the specialist PostgreSQL service.</p>
+        <p><a class="button-link" href="https://postgresaudit.com/">Open PostgreSQL specialist site</a></p>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><strong>Database Optimization Tool</strong><nav class="footer-links"><a href="/postgresql/">PostgreSQL hub</a><a href="/postgresql/collector/">Collector</a><a href="/postgresql/slow-query-audit/">Slow query audit</a></nav></footer>
+</body>
+</html>

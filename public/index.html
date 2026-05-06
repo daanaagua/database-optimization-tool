@@ -10,8 +10,225 @@
   <meta property="og:description" content="Evidence-backed database optimization for lean teams. PostgreSQL available now.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://databaseoptimizationtool.com/">
+  <meta property="og:site_name" content="Database Optimization Tool">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Database Optimization Tool | Evidence-Backed SQL Performance Review">
+  <meta name="twitter:description" content="Find slow queries, missing indexes, table health risk, and safe next steps with a read-only PostgreSQL audit workflow.">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/assets/styles.css">
+  <style>
+    @media (max-width: 700px) {
+      .site-header {
+        gap: 12px;
+      }
+
+      .brand,
+      .brand span {
+        min-width: 0;
+        max-width: 100%;
+      }
+
+      .brand span,
+      h1,
+      h2,
+      h3,
+      p,
+      a {
+        overflow-wrap: anywhere;
+      }
+
+      .nav {
+        flex-wrap: wrap;
+        gap: 10px;
+        overflow-x: visible;
+        padding-bottom: 0;
+        scroll-padding: 0 18px;
+      }
+
+      .nav a {
+        flex: 0 1 auto;
+      }
+
+      .nav .button-link {
+        width: auto;
+        min-height: 36px;
+        padding: 8px 12px;
+      }
+
+      .hero,
+      .page-hero {
+        padding-right: clamp(16px, 5vw, 24px);
+        padding-left: clamp(16px, 5vw, 24px);
+      }
+
+      .page-hero {
+        padding-top: clamp(56px, 16vw, 86px);
+        padding-bottom: clamp(42px, 12vw, 62px);
+      }
+
+      h1 {
+        font-size: clamp(2.2rem, 10.4vw, 3rem);
+        line-height: 1.06;
+        text-wrap: balance;
+      }
+
+      h2,
+      .section-head h2,
+      .callout h2 {
+        font-size: clamp(1.72rem, 7.8vw, 2.35rem);
+        line-height: 1.12;
+        text-wrap: balance;
+      }
+
+      .lede,
+      .section-head p {
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+
+      .actions {
+        gap: 10px;
+        margin-top: 22px;
+      }
+
+      .button-link,
+      .secondary-link {
+        min-width: 0;
+        max-width: 100%;
+        min-height: 44px;
+        padding: 10px 14px;
+        line-height: 1.18;
+        text-align: center;
+        white-space: normal;
+      }
+
+      .grid {
+        gap: 14px;
+      }
+
+      .card,
+      .step,
+      .engine,
+      .callout {
+        padding: 20px;
+      }
+
+      .tool-preview {
+        max-width: 100%;
+        margin-top: 22px;
+      }
+
+      .preview-top {
+        align-items: flex-start;
+        gap: 8px;
+      }
+
+      .preview-top .traffic-lights {
+        flex: 0 0 auto;
+        padding-top: 3px;
+      }
+
+      .preview-top span:not(.traffic-lights):not(.preview-dot) {
+        line-height: 1.25;
+      }
+
+      .preview-dot {
+        flex: 0 0 auto;
+        margin-top: 4px;
+        margin-left: 4px;
+      }
+
+      .finding {
+        gap: 8px;
+      }
+
+      .severity {
+        max-width: 100%;
+      }
+
+      .status-row {
+        gap: 8px;
+      }
+
+      .pill {
+        justify-content: center;
+        line-height: 1.25;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .hero {
+        padding-top: 38px;
+        padding-bottom: 34px;
+      }
+
+      .page-hero {
+        padding-top: 48px;
+      }
+
+      h1 {
+        font-size: clamp(1.95rem, 8.6vw, 2.25rem);
+        line-height: 1.1;
+      }
+
+      h2,
+      .section-head h2,
+      .callout h2 {
+        font-size: clamp(1.55rem, 7vw, 2rem);
+        line-height: 1.15;
+      }
+
+      .eyebrow {
+        width: 100%;
+        justify-content: center;
+        line-height: 1.25;
+        white-space: normal;
+      }
+
+      .actions {
+        width: 100%;
+      }
+
+      .actions .button-link,
+      .actions .secondary-link {
+        font-size: 0.96rem;
+      }
+
+      .status-row {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .pill {
+        width: 100%;
+      }
+
+      .preview-body {
+        padding: 10px 12px;
+      }
+
+      .finding {
+        padding: 10px 0;
+      }
+
+      .section-head {
+        margin-bottom: 24px;
+      }
+
+      .band {
+        padding-top: 48px;
+        padding-bottom: 56px;
+      }
+
+      .card,
+      .step,
+      .engine,
+      .callout {
+        padding: 18px;
+      }
+    }
+  </style>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -225,6 +442,38 @@
           <h3>Track the next bottleneck</h3>
           <p>Turn each report into a prioritized work queue for a founder, developer, or outside consultant.</p>
         </article>
+      </div>
+    </section>
+
+    <section class="band" id="postgresql-paths">
+      <div class="section-head">
+        <h2>PostgreSQL paths available now.</h2>
+        <p>Start with the overview, collect read-only evidence, inspect a sample report, or focus directly on slow query pressure.</p>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <h3>PostgreSQL optimization</h3>
+          <p>Review the current PostgreSQL audit scope, supported findings, and safe boundaries before collecting evidence.</p>
+          <a href="/postgresql/">Open PostgreSQL path</a>
+        </article>
+        <article class="card">
+          <h3>Read-only collector</h3>
+          <p>Use the collector entry point to gather metadata and statistics without production writes or automatic changes.</p>
+          <a href="/postgresql/collector/">Open collector</a>
+        </article>
+        <article class="card">
+          <h3>Sample report</h3>
+          <p>See how query pressure, index review, table health, and AI-assisted notes appear in the report workflow.</p>
+          <a href="/postgresql/sample-report/">View sample report</a>
+        </article>
+        <article class="card">
+          <h3>Slow query audit</h3>
+          <p>Focus on high-cost queries, repeated latency patterns, temp writes, disk reads, and review-ready next steps.</p>
+          <a href="/postgresql/slow-query-audit/">Audit slow queries</a>
+        </article>
+      </div>
+      <div class="actions">
+        <a class="secondary-link" href="https://postgresaudit.com/">Need a specialist PostgreSQL audit?</a>
       </div>
     </section>
 

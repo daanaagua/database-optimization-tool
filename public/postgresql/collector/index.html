@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PostgreSQL Read-Only Collector Path</title>
+  <meta name="description" content="PostgreSQL collector path for local, read-only audit evidence without production writes, migrations, index creation, or hosted account flows.">
+  <link rel="canonical" href="https://databaseoptimizationtool.com/postgresql/collector/">
+  <meta property="og:title" content="PostgreSQL Read-Only Collector Path">
+  <meta property="og:description" content="Local PostgreSQL collector path for read-only audit evidence without production writes or automatic tuning changes.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://databaseoptimizationtool.com/postgresql/collector/">
+  <meta property="og:site_name" content="Database Optimization Tool">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="PostgreSQL Read-Only Collector Path">
+  <meta name="twitter:description" content="Prepare PostgreSQL audit evidence with temporary access, local collection, and no production writes.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "PostgreSQL Read-Only Collector Path",
+        "url": "https://databaseoptimizationtool.com/postgresql/collector/",
+        "description": "PostgreSQL collector path for local, read-only audit evidence without production writes, migrations, index creation, or hosted account flows.",
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "Database Optimization Tool",
+          "url": "https://databaseoptimizationtool.com/"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://databaseoptimizationtool.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "PostgreSQL",
+            "item": "https://databaseoptimizationtool.com/postgresql/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Collector",
+            "item": "https://databaseoptimizationtool.com/postgresql/collector/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What does the PostgreSQL collector path collect?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It focuses on local read-only evidence such as catalog metadata, statistics, table health signals, index usage, role posture, and workload pressure."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does the collector create indexes or change production data?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. The collector path is for evidence gathering only. It does not create indexes, run migrations, clean data, or make production writes."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="Database Optimization Tool home">
+      <svg aria-hidden="true" class="brand-mark" height="26" viewBox="0 0 64 64" width="26" xmlns="http://www.w3.org/2000/svg">
+        <path class="brand-mark-stroke" d="M32 6 48.5 12.2v14.9c0 10.9-5.8 19-16.5 25.9C21.3 46.1 15.5 38 15.5 27.1V12.2L32 6Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4.8"></path>
+        <ellipse class="brand-mark-stroke" cx="32" cy="21.4" fill="none" rx="10.2" ry="4.6" stroke="currentColor" stroke-width="4.2"></ellipse>
+        <path class="brand-mark-stroke" d="M21.8 21.4v16.2c0 2.6 4.6 4.8 10.2 4.8s10.2-2.2 10.2-4.8V21.4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4.2"></path>
+        <path class="brand-mark-stroke" d="M21.8 37.6c0 2.6 4.6 4.8 10.2 4.8s10.2-2.2 10.2-4.8" fill="none" stroke="currentColor" stroke-width="4.2"></path>
+        <path class="brand-mark-accent" d="M24.8 31h14.4" fill="none" stroke="var(--brand-accent, #087b84)" stroke-linecap="round" stroke-width="5.8"></path>
+      </svg>
+      <span>Database Optimization Tool</span>
+    </a>
+    <nav class="nav" aria-label="Main navigation"><a href="/postgresql/">PostgreSQL</a><a href="/postgresql/sample-report/">Sample report</a><a href="/tools/">Tools</a><a class="button-link" href="/">Home</a></nav>
+  </header>
+  <main>
+    <section class="page-hero">
+      <p class="eyebrow">Local collector</p>
+      <h1>Use a PostgreSQL collector path that keeps production writes out of scope.</h1>
+      <p class="lede">The collector model is for evidence gathering: catalog metadata, statistics, table health signals, index usage, role posture, and workload pressure. It should not modify database state.</p>
+    </section>
+
+    <section class="band">
+      <div class="section-head">
+        <h2>Collector boundaries.</h2>
+        <p>The safest first audit uses temporary, least-privilege access and a local run path that can be revoked after review.</p>
+      </div>
+      <div class="grid">
+        <article class="card"><h3>Read-only scope</h3><p>No production writes, no DDL, no index creation, no data cleanup, and no automatic tuning changes.</p></article>
+        <article class="card"><h3>Local evidence</h3><p>Collect from system catalogs and statistics such as query activity, relation sizes, index usage, dead tuple signals, and maintenance timestamps.</p></article>
+        <article class="card"><h3>Temporary access</h3><p>Prefer a dedicated audit role with limited visibility and a clear removal plan after the audit is complete.</p></article>
+      </div>
+    </section>
+
+    <section class="band alt">
+      <div class="grid two">
+        <article class="step"><span class="number">1</span><h3>Confirm goal</h3><p>Define whether the audit is for launch readiness, slow checkout, reporting latency, capacity planning, or a general tuning pass.</p></article>
+        <article class="step"><span class="number">2</span><h3>Collect signals</h3><p>Capture slow query pressure, table and index size, unused index candidates, bloat risk, vacuum health, temp writes, and role review signals.</p></article>
+        <article class="step"><span class="number">3</span><h3>Keep output reviewable</h3><p>Store findings as a report that a developer, DBA, or specialist can challenge before any production change is scheduled.</p></article>
+        <article class="step"><span class="number">4</span><h3>Escalate when needed</h3><p>Use the specialist PostgreSQL service for hosted workflow, account handling, pricing, or transaction support.</p></article>
+      </div>
+      <div class="callout">
+        <h2>Boundary note</h2>
+        <p>This category page explains the collector path. It does not provide hosted accounts, payment flows, or a production execution system.</p>
+        <p><a class="button-link" href="https://postgresaudit.com/">Open PostgreSQL specialist site</a></p>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><strong>Database Optimization Tool</strong><nav class="footer-links"><a href="/postgresql/">PostgreSQL hub</a><a href="/postgresql/sample-report/">Sample report</a><a href="/postgresql/slow-query-audit/">Slow query audit</a></nav></footer>
+</body>
+</html>

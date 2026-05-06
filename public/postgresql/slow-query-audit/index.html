@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PostgreSQL Slow Query Audit</title>
+  <meta name="description" content="PostgreSQL slow query audit guide for ranking query pressure, checking index evidence, and planning safe review before production changes.">
+  <link rel="canonical" href="https://databaseoptimizationtool.com/postgresql/slow-query-audit/">
+  <meta property="og:title" content="PostgreSQL Slow Query Audit">
+  <meta property="og:description" content="Rank PostgreSQL query pressure with slow query evidence, index signals, table health, and safe review planning.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://databaseoptimizationtool.com/postgresql/slow-query-audit/">
+  <meta property="og:site_name" content="Database Optimization Tool">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="PostgreSQL Slow Query Audit">
+  <meta name="twitter:description" content="Start PostgreSQL slow query work by ranking pressure before guessing production fixes.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <style>
+    @media (max-width: 560px) {
+      .nav {
+        flex-wrap: wrap;
+        gap: 10px;
+        overflow-x: visible;
+        padding-bottom: 0;
+      }
+
+      .nav a {
+        flex: 0 1 auto;
+      }
+
+      .nav .button-link {
+        width: auto;
+        min-height: 36px;
+        padding: 8px 12px;
+      }
+
+      .button-link,
+      .secondary-link {
+        min-width: 0;
+        max-width: 100%;
+        line-height: 1.18;
+        text-align: center;
+        white-space: normal;
+      }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "PostgreSQL Slow Query Audit",
+        "url": "https://databaseoptimizationtool.com/postgresql/slow-query-audit/",
+        "description": "PostgreSQL slow query audit guide for ranking query pressure, checking index evidence, and planning safe review before production changes.",
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "Database Optimization Tool",
+          "url": "https://databaseoptimizationtool.com/"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://databaseoptimizationtool.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "PostgreSQL",
+            "item": "https://databaseoptimizationtool.com/postgresql/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Slow query audit",
+            "item": "https://databaseoptimizationtool.com/postgresql/slow-query-audit/"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="Database Optimization Tool home">
+      <svg aria-hidden="true" class="brand-mark" height="26" viewBox="0 0 64 64" width="26" xmlns="http://www.w3.org/2000/svg">
+        <path class="brand-mark-stroke" d="M32 6 48.5 12.2v14.9c0 10.9-5.8 19-16.5 25.9C21.3 46.1 15.5 38 15.5 27.1V12.2L32 6Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4.8"></path>
+        <ellipse class="brand-mark-stroke" cx="32" cy="21.4" fill="none" rx="10.2" ry="4.6" stroke="currentColor" stroke-width="4.2"></ellipse>
+        <path class="brand-mark-stroke" d="M21.8 21.4v16.2c0 2.6 4.6 4.8 10.2 4.8s10.2-2.2 10.2-4.8V21.4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4.2"></path>
+        <path class="brand-mark-stroke" d="M21.8 37.6c0 2.6 4.6 4.8 10.2 4.8s10.2-2.2 10.2-4.8" fill="none" stroke="currentColor" stroke-width="4.2"></path>
+        <path class="brand-mark-accent" d="M24.8 31h14.4" fill="none" stroke="var(--brand-accent, #087b84)" stroke-linecap="round" stroke-width="5.8"></path>
+      </svg>
+      <span>Database Optimization Tool</span>
+    </a>
+    <nav class="nav" aria-label="Main navigation"><a href="/postgresql/">PostgreSQL</a><a href="/postgresql/collector/">Collector</a><a href="/postgresql/sample-report/">Sample report</a><a class="button-link" href="/">Home</a></nav>
+  </header>
+  <main>
+    <section class="page-hero">
+      <p class="eyebrow">Problem path</p>
+      <h1>A PostgreSQL slow query audit starts by ranking pressure, not guessing fixes.</h1>
+      <p class="lede">Slow query work should connect query statistics, index evidence, table health, and business workflow impact before anyone changes production SQL.</p>
+    </section>
+
+    <section class="band">
+      <div class="grid">
+        <article class="card"><h3>Total time</h3><p>High total time usually points to repeated user impact. It can matter more than one rare, very slow statement.</p></article>
+        <article class="card"><h3>Mean time</h3><p>High mean time shows heavy individual queries that may block checkout, reporting, booking, or admin workflows.</p></article>
+        <article class="card"><h3>Temp writes</h3><p>Temporary files can expose sort, join, or memory pressure that deserves EXPLAIN review before tuning.</p></article>
+        <article class="card"><h3>Disk reads</h3><p>Read pressure can point to missing index candidates, inefficient joins, stale statistics, or cold-cache behavior.</p></article>
+        <article class="card"><h3>Index evidence</h3><p>Index recommendations should connect to a hot query shape and be tested before production creation.</p></article>
+        <article class="card"><h3>Table health</h3><p>Bloat, dead tuples, and vacuum drift can make otherwise reasonable queries behave poorly under load.</p></article>
+      </div>
+      <div class="callout">
+        <h2>No automatic production changes</h2>
+        <p>The audit path should produce a prioritized review list. Query rewrites, index creation, and configuration changes still need owner approval and rollout planning.</p>
+      </div>
+    </section>
+
+    <section class="band alt">
+      <div class="callout">
+        <h2>Need a specialist PostgreSQL audit?</h2>
+        <p>If slow query review needs hosted workflow, account handling, pricing, or transaction support, use the dedicated PostgreSQL specialist service instead of this category guide.</p>
+        <p><a class="button-link" href="https://postgresaudit.com/">Open PostgreSQL specialist site</a></p>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><strong>Database Optimization Tool</strong><nav class="footer-links"><a href="/postgresql/">PostgreSQL hub</a><a href="/postgresql/collector/">Collector</a><a href="/query-optimization/">Query optimization</a></nav></footer>
+</body>
+</html>
