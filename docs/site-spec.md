@@ -45,4 +45,4 @@ Use `Database Optimization Tool` as the brand and product category. Use `read-on
 - Do not claim all databases are supported today.
 - Do not claim automatic production fixes.
 - Do not build auth, billing, upload, collector, or LLM back-end in this first site.
-- Do not redirect `postgresaudit.com` to the new domain.
+- Keep formal PostgreSQL product and specialist conversion links on `databaseoptimizationtool.com` internal paths, especially `/postgresql/collector/`, `/postgresql/sample-report/`, and `/database-optimization-audit-request/`.

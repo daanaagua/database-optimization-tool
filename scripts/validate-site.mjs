@@ -125,25 +125,12 @@ function hasAttr(anchor, attr) {
   return new RegExp(`\\s${attr}=(["'])[^"']+\\1`).test(anchor);
 }
 
-function hasQueryParam(anchor, param) {
-  return new RegExp(`(?:\\?|&amp;|&)${param}=`).test(anchor);
-}
-
 function requireMeasuredAnchor(anchor, path) {
   for (const attr of ["data-measure", "data-source-page", "data-slot"]) {
     if (!hasAttr(anchor, attr)) {
       throw new Error(`${path} measured CTA missing ${attr}`);
     }
   }
-}
-
-function requirePostgresAuditLink(anchor, path) {
-  for (const param of ["utm_source", "utm_medium", "utm_campaign", "utm_content"]) {
-    if (!hasQueryParam(anchor, param)) {
-      throw new Error(`${path} postgresaudit link missing ${param}`);
-    }
-  }
-  requireMeasuredAnchor(anchor, path);
 }
 
 for (const path of conversionPages) {
@@ -159,9 +146,6 @@ for (const path of conversionPages) {
   for (const anchor of measuredAnchors) {
     requireMeasuredAnchor(anchor, path);
   }
-  for (const anchor of anchors.filter((link) => link.includes("postgresaudit.com"))) {
-    requirePostgresAuditLink(anchor, path);
-  }
 }
 
 const requestSource = readFileSync(join(root, "database-optimization-audit-request/index.html"), "utf8");
@@ -172,21 +156,19 @@ for (const sourceCode of ["dot_request_hero", "dot_request_bottom"]) {
   }
 }
 
-const requestPostgresLinks = anchorsIn(requestSource).filter((anchor) => anchor.includes("postgresaudit.com"));
+const requestPostgresLinks = anchorsIn(requestSource).filter((anchor) => anchor.includes("/postgresql/collector/"));
 if (requestPostgresLinks.length !== 2) {
-  throw new Error("database-optimization-audit-request/index.html expected 2 postgresaudit links");
-}
-for (const utmContent of ["request_hero_secondary", "request_bottom_text"]) {
-  if (!requestPostgresLinks.some((anchor) => anchor.includes(`utm_content=${utmContent}`))) {
-    throw new Error(`database-optimization-audit-request/index.html missing postgresaudit ${utmContent} UTM content`);
-  }
+  throw new Error("database-optimization-audit-request/index.html expected 2 internal PostgreSQL collector links");
 }
 for (const anchor of requestPostgresLinks) {
-  requirePostgresAuditLink(anchor, "database-optimization-audit-request/index.html");
+  requireMeasuredAnchor(anchor, "database-optimization-audit-request/index.html");
 }
 
 for (const file of siteFiles) {
   const source = readFileSync(file, "utf8");
+  if (source.includes("postgresaudit.com")) {
+    throw new Error(`${file} includes deprecated postgresaudit.com link`);
+  }
   for (const token of ["googletagmanager", "gtag/js"]) {
     if (file !== ga4File && source.includes(token)) {
       throw new Error(`${file} includes forbidden GA/GTM loader token ${token}`);

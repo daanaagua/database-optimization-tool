@@ -6,7 +6,7 @@
 
 当前已经存在 PostgreSQL 专项承接路径：`/postgresql/`、`/postgresql/collector/`、`/postgresql/sample-report/`、`/postgresql/slow-query-audit/`。这些页面承担“PostgreSQL 已可服务”的证明和下游导流。
 
-当前问题不是 SEO 入口缺失，而是转化信号偏弱：用户看完 broad 页面后，还不够明确知道下一步能拿到什么、多久拿到、需要提供什么、风险边界是什么、什么时候应该进入 `postgresaudit.com`。
+当前问题不是 SEO 入口缺失，而是转化信号偏弱：用户看完 broad 页面后，还不够明确知道下一步能拿到什么、多久拿到、需要提供什么、风险边界是什么、什么时候应该进入主域内部 PostgreSQL 路径。
 
 ## 2. 长远目标
 
@@ -19,7 +19,7 @@
 3. 用信任资产降低用户对数据库安全、生产风险、交付质量的顾虑。
 4. 用转化资产收集最小需求信息，但不在主站构建完整 SaaS。
 5. 用产品化资产证明 PostgreSQL 审计路径是可重复交付的流程，而不是一次性咨询文案。
-6. 把需要账户、定价、交易、正式 PostgreSQL 服务承接的用户送到 `postgresaudit.com`。
+6. 把需要账户、定价、交易、正式 PostgreSQL 服务承接的用户送到 `databaseoptimizationtool.com` 的内部请求或 PostgreSQL 路径。
 
 ## 3. 站点分工
 
@@ -35,9 +35,9 @@
 6. 提供轻量请求入口，让用户表达需求并进入人工跟进。
 7. 为未来 MySQL、SQL Server 等引擎预留路线，但不声明当前已支持。
 
-### 3.2 `postgresaudit.com` 的职责
+### 3.2 主域 PostgreSQL 专项路径的职责
 
-`postgresaudit.com` 负责以下事项：
+主域 PostgreSQL 专项路径负责以下事项：
 
 1. PostgreSQL 专项服务的正式转化。
 2. 账户、价格、付款、订单、服务条款等交易相关流程。
@@ -47,11 +47,11 @@
 
 ### 3.3 两站关系
 
-主站是上游需求入口，`postgresaudit.com` 是 PostgreSQL 专项成交和交付入口。
+主站是上游需求入口，主域内部 PostgreSQL 路径是 PostgreSQL 专项承接入口。
 
-主站可以链接到 `postgresaudit.com`，但不能让用户误以为主站已经包含完整账户、付款、托管审计、自动修复系统。
+主站可以链接到 `/postgresql/collector/`、`/postgresql/sample-report/` 和 `/database-optimization-audit-request/`，但不能让用户误以为主站已经包含完整账户、付款、托管审计、自动修复系统。
 
-`postgresaudit.com` 可以反向引用主站的 broad 教育内容，但 PostgreSQL 成交路径应留在 `postgresaudit.com`。
+PostgreSQL 专项路径可以引用主站的 broad 教育内容，但 PostgreSQL 承接路径应留在 `databaseoptimizationtool.com` 主域内部。
 
 ## 4. 今天先做什么基础部分，为什么
 
@@ -136,7 +136,7 @@
 1. 症状页先链接到 `/database-performance-audit/`。
 2. 审计页链接到 `/database-optimization-audit/`。
 3. 查询和索引页链接到 `/postgresql/slow-query-audit/` 和 `/postgresql/`。
-4. PostgreSQL 明确用户链接到 `postgresaudit.com`。
+4. PostgreSQL 明确用户链接到主域内部 PostgreSQL 路径。
 
 本阶段不做：
 
@@ -189,14 +189,14 @@
 3. 邮件请求模板：用户可复制并发送，不依赖第三方表单。
 4. 报告样例下载或静态查看入口。
 5. “适合现在请求审计吗”判断块。
-6. “如果你已经确定是 PostgreSQL 问题”导向 `postgresaudit.com`。
+6. “如果你已经确定是 PostgreSQL 问题”导向 `/postgresql/collector/` 或 `/database-optimization-audit-request/`。
 
 转化入口按用户阶段分层：
 
 1. 低确定性用户：进入 checklist 或 performance audit 页面。
 2. 中确定性用户：请求 broad database optimization audit。
-3. PostgreSQL 高确定性用户：进入 `/postgresql/` 或 `postgresaudit.com`。
-4. 已准备购买或正式服务用户：进入 `postgresaudit.com`。
+3. PostgreSQL 高确定性用户：进入 `/postgresql/` 或 `/postgresql/collector/`。
+4. 已准备购买或正式服务用户：进入 `/database-optimization-audit-request/`。
 
 本阶段仍不做：
 
@@ -225,7 +225,7 @@
 1. 让用户理解审计不是黑箱。
 2. 让后续人工交付有统一格式。
 3. 让后续自动化只围绕已验证字段扩展。
-4. 让 `postgresaudit.com` 可以承接更正式的 PostgreSQL 服务流程。
+4. 让主域内部 PostgreSQL 路径可以承接更正式的 PostgreSQL 服务流程。
 
 可规划但不立即实施的产品能力：
 
@@ -415,7 +415,7 @@
 1. 审计请求数量。
 2. 请求信息完整率。
 3. PostgreSQL 用户占比。
-4. 进入 `postgresaudit.com` 的外链点击数。
+4. 进入主域内部 PostgreSQL 路径的点击数。
 5. 人工跟进后可成交机会数量。
 
 ## 11. 非目标
@@ -432,7 +432,7 @@
 8. 不做自动创建索引。
 9. 不做自动 SQL 重写并部署。
 10. 不声称 MySQL 或 SQL Server 当前已支持。
-11. 不把 `postgresaudit.com` 重定向到主站。
+11. 不把正式 PostgreSQL 转化 CTA 指向主域外部旧域名。
 12. 不让主站承接 PostgreSQL 正式交易流程。
 13. 不把第三方表单方案作为规划前提。
 
@@ -458,9 +458,9 @@
 
 ### 12.4 两站分工混乱风险
 
-如果主站和 `postgresaudit.com` 都承接 PostgreSQL 成交流程，用户会不知道在哪里请求正式服务。
+如果主站多个入口都承接 PostgreSQL 成交流程，用户会不知道在哪里请求正式服务。
 
-控制方式：主站负责教育、分流、预转化；`postgresaudit.com` 负责 PostgreSQL 正式服务、账户、价格、交易。
+控制方式：主站负责教育、分流、预转化；`/database-optimization-audit-request/` 负责正式请求承接；`/postgresql/collector/` 和 `/postgresql/sample-report/` 负责 PostgreSQL 证据与报告预期。
 
 ### 12.5 内容堆砌风险
 
@@ -500,7 +500,7 @@
 后续 worker 拿本 spec 实施时，应遵守：
 
 1. 每次只改一个阶段或一组强相关页面。
-2. 每次修改必须保持 broad -> PostgreSQL -> `postgresaudit.com` 的路径清晰。
+2. 每次修改必须保持 broad -> PostgreSQL -> 主域内部请求/证据路径清晰。
 3. 每个新增页面必须有明确搜索意图、目标用户、下一步动作。
 4. 每个转化块必须说明交付物、时效、安全边界。
 5. 每个 PostgreSQL 相关页面必须说明只读、无生产写入、人工复核。
@@ -512,4 +512,3 @@
 ```bash
 npm run check
 ```
-
